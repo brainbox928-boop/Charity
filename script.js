@@ -231,7 +231,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     } else if (selectedMethod === "bank") {
-      instructions.innerHTML = `<div class="checkout-instructions"><h3>Request verified bank details</h3><p>Bank account information has not been configured on this page. Contact <a href="mailto:${supportEmail}">${supportEmail}</a> to request verified transfer details before sending funds.</p><p class="checkout-notice">Do not transfer money to an account unless you have independently confirmed it belongs to the intended organization.</p></div>`;
+      instructions.innerHTML = `
+        <div class="checkout-instructions">
+          <h3>Verified bank transfer details</h3>
+          <p>Use these details to make your bank transfer. Enter your transfer reference on the next step and upload its receipt for manual review.</p>
+          <dl class="bank-detail-list">
+            <div><dt>Bank name</dt><dd>Lead Bank<button class="bank-copy" type="button" data-copy-value="Lead Bank" aria-label="Copy bank name"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
+            <div><dt>Account number</dt><dd>216353255646<button class="bank-copy" type="button" data-copy-value="216353255646" aria-label="Copy account number"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
+            <div><dt>Routing number</dt><dd>101019644<button class="bank-copy" type="button" data-copy-value="101019644" aria-label="Copy routing number"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
+            <div><dt>Bank address</dt><dd>9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA<button class="bank-copy" type="button" data-copy-value="9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA" aria-label="Copy bank address"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
+          </dl>
+          <p class="checkout-notice">This website does not initiate the bank transfer. Check the transfer details before sending and submit your payment receipt on the next step.</p>
+        </div>`;
+      instructions.querySelectorAll(".bank-copy").forEach((button) => {
+        button.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(button.dataset.copyValue);
+            button.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
+            button.setAttribute("aria-label", "Copied");
+          } catch {
+            button.setAttribute("aria-label", "Copy unavailable; select the bank detail text");
+          }
+        });
+      });
     } else {
       instructions.innerHTML = `<div class="checkout-instructions"><h3>Request the verified PayPal link</h3><p>A PayPal account has not been configured on this page. Email <a href="mailto:${supportEmail}">${supportEmail}</a> to request the official donation link before sending funds.</p></div>`;
     }

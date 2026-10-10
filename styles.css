@@ -616,6 +616,14 @@ footer {
 .checkout-instructions p { margin: 0 0 12px; color: var(--hope-muted); font-size: .88rem; }
 .checkout-instructions p:last-child { margin-bottom: 0; }
 
+.bank-detail-list { margin: 16px 0; }
+.bank-detail-list > div { display: grid; grid-template-columns: minmax(105px, .35fr) minmax(0, 1fr); gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--hope-line); }
+.bank-detail-list > div:last-child { border-bottom: 0; }
+.bank-detail-list dt { color: var(--hope-muted); font-size: .82rem; font-weight: 600; }
+.bank-detail-list dd { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 10px; margin: 0; overflow-wrap: anywhere; font-size: .9rem; font-weight: 700; }
+.bank-copy { display: grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; border: 1px solid var(--hope-line); border-radius: 5px; background: #fff; color: var(--hope-green-dark); }
+.bank-copy:hover { border-color: var(--hope-green); background: var(--hope-mint); }
+
 .checkout-notice {
   margin: 16px 0 0;
   padding: 12px 14px;
@@ -866,6 +874,7 @@ footer {
   .checkout-method { min-height: auto; display: grid; grid-template-columns: 28px 1fr; column-gap: 10px; }
   .checkout-method__icon { grid-row: span 2; }
   .checkout-address { flex-direction: column; }
+  .bank-detail-list > div { grid-template-columns: 1fr; gap: 4px; }
   .checkout-actions { flex-wrap: wrap; }
   .checkout-actions > button,
   .checkout-actions > a { flex: 1 1 auto; text-align: center; }
