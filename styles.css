@@ -44,7 +44,10 @@ body {
 }
 
 .hero {
-  background: linear-gradient(180deg, #f1f6ed 0%, #fff 90%);
+  background-color: #f5f7ef;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(40, 120, 92, .035) 0 1px, transparent 1px 22px),
+    linear-gradient(118deg, #edf5e9 0%, #fffaf1 54%, #f6eee7 100%);
 }
 
 .hero h1 {
@@ -81,7 +84,10 @@ body {
 }
 
 .projects-section {
-  background: var(--hope-paper);
+  background-color: var(--hope-paper);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(40, 120, 92, .025) 0 1px, transparent 1px 30px),
+    linear-gradient(105deg, #fbfaf5 0%, #f5f7ef 100%);
 }
 
 .projects-section .section-header {
@@ -215,7 +221,10 @@ body {
 }
 
 .section-alt {
-  background: #f1f6ed;
+  background-color: #f2f6ed;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(40, 120, 92, .025) 0 1px, transparent 1px 28px),
+    linear-gradient(115deg, #eef5e9 0%, #f8f4e9 100%);
 }
 
 .support-cta {
@@ -294,7 +303,12 @@ body {
 
 .media-caption { margin: 10px 0 0; color: var(--hope-muted); font-size: .78rem; }
 
-.campaign-section { background: #edf4eb; }
+.campaign-section {
+  background-color: #edf4eb;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(40, 120, 92, .03) 0 1px, transparent 1px 30px),
+    linear-gradient(115deg, #eaf3e8 0%, #f4f3e9 100%);
+}
 .campaign-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
 
 .campaign-tracker {
@@ -382,7 +396,9 @@ footer {
   min-height: 100vh;
   padding: 38px 16px;
   background-color: var(--hope-paper);
-  background-image: linear-gradient(135deg, rgba(234, 244, 237, .8), transparent 45%);
+  background-image:
+    repeating-linear-gradient(135deg, rgba(40, 120, 92, .028) 0 1px, transparent 1px 26px),
+    linear-gradient(125deg, #eaf3e9 0%, #fbfaf5 52%, #f6eee7 100%);
 }
 
 .checkout-shell {
@@ -720,7 +736,13 @@ footer {
 .featured-project-links a:hover { color: var(--hope-green-dark); }
 
 .projects-page,
-.project-detail-page { min-height: 100vh; background: var(--hope-paper); }
+.project-detail-page {
+  min-height: 100vh;
+  background-color: var(--hope-paper);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(40, 120, 92, .022) 0 1px, transparent 1px 32px),
+    linear-gradient(115deg, #fbfaf5, #f4f6ef);
+}
 
 .projects-topbar {
   display: flex;

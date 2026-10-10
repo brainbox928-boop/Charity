@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkout = document.querySelector("#checkout-form");
   if (!checkout) return;
 
-  const supportEmail = "contributions@globalhope.org";
+  const supportEmail = "globalhopeonline@gmail.com";
   const causes = {
     "food-security": "Food Security & Agricultural Development",
     healthcare: "Healthcare & Medical Access",
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#submission-method").value = `${methodNames[selectedMethod]}${selectedCrypto ? ` (${cryptoOptions[selectedCrypto].name} / ${cryptoOptions[selectedCrypto].ticker})` : ""}`;
     document.querySelector("#submission-crypto").value = selectedCrypto ? cryptoOptions[selectedCrypto].name : "Not applicable";
     document.querySelector("#submission-monthly").value = monthlyInterest ? "Interested; contact me about options" : "No";
-    document.querySelector("#submission-receipt").value = receiptRequested ? "Yes, after manual review" : "No";
+    document.querySelector("#submission-receipt").value = receiptRequested ? "Yes, send an acknowledgment after manual review" : "No";
     document.querySelector("#submission-consent").value = donorConsent ? "Yes, first name and amount after verification" : "No, keep anonymous";
   });
 
