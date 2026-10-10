@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlobalHope — Empowering Communities on a Global Scale</title>
+<style>
+  :root {
+    --emerald: #10b981;
+    --emerald-dark: #059669;
+    --slate: #1e293b;
+    --slate-light: #64748b;
+    --bg-white: #ffffff;
+    --bg-soft: #f8fafc;
+    --border-soft: #e2e8f0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--slate);
+    background: var(--bg-white);
+    line-height: 1.6;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--slate);
+    letter-spacing: -0.02em;
+  }
+
+  .logo span { color: var(--emerald); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--slate-light);
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover { color: var(--emerald-dark); }
+
+  .nav-cta {
+    background: var(--emerald);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--slate);
+    border-radius: 2px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 160px 0 100px;
+    background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: var(--emerald-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.12);
+  }
+
+  .badge::before {
+    content: "✓";
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    max-width: 850px;
+    margin: 0 auto 24px;
+    color: var(--slate);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--emerald);
+  }
+
+  .hero p {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    color: var(--slate-light);
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--emerald);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 36px;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(16, 185, 129, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(16, 185, 129, 0.4);
+  }
+
+  /* ---------- Section headings ---------- */
+  .section {
+    padding: 100px 0;
+  }
+
+  .section-alt {
+    background: var(--bg-soft);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 60px;
+  }
+
+  .eyebrow {
+    color: var(--emerald-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    color: var(--slate-light);
+    font-size: 1.05rem;
+  }
+
+  /* ---------- About Grid ---------- */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 36px 28px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #ecfdf5;
+    color: var(--emerald-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    color: var(--slate-light);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Payment Section ---------- */
+  .payment-box {
+    background: #fff;
+    border: 2px dashed var(--emerald);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  .payment-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+  }
+
+  .payment-intro h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+
+  .payment-intro p {
+    color: var(--slate-light);
+  }
+
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+
+  .payment-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  .payment-card h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--slate);
+  }
+
+  .payment-card h4::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--emerald);
+    display: inline-block;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.92rem;
+    gap: 12px;
+  }
+
+  .detail-row:last-child { border-bottom: none; }
+
+  .detail-label {
+    color: var(--slate-light);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .detail-value {
+    font-weight: 700;
+    color: var(--slate);
+    text-align: right;
+    font-family: "Courier New", monospace;
+  }
+
+  .verification-notice {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .verification-notice .icon {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .verification-notice h4 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #92400e;
+  }
+
+  .verification-notice p {
+    color: #78350f;
+    font-size: 0.92rem;
+  }
+
+  .verification-notice a {
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--slate);
+    color: #cbd5e1;
+    padding: 56px 0 32px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 24px;
+  }
+
+  .footer-logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .footer-logo span { color: var(--emerald); }
+
+  .footer-tagline {
+    max-width: 380px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 10px;
+  }
+
+  .disclaimer {
+    max-width: 480px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    background: #0f172a;
+    padding: 18px 20px;
+    border-radius: 10px;
+    border-left: 3px solid var(--emerald);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+
+  /* ---------- Crypto / Gift Card Payment ---------- */
+  .payment-choice {
+    max-width: 420px;
+    margin: 0 auto 48px;
+  }
+
+  .payment-choice label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--slate);
+  }
+
+  .payment-choice select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    background: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--slate);
+    cursor: pointer;
+  }
+
+  .payment-option[hidden] { display: none; }
+
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .crypto-card {
+    background: #fff;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  }
+
+  .crypto-qr-wrap {
+    background: var(--bg-soft);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .crypto-qr {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+  }
+
+  .crypto-card-body {
+    padding: 22px;
+  }
+
+  .crypto-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .crypto-card-head h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .crypto-badge {
+    background: #ecfdf5;
+    color: var(--emerald-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .copy-field {
+    display: flex;
+    gap: 8px;
+  }
+
+  .copy-field input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+    background: var(--bg-soft);
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  .btn-copy {
+    flex-shrink: 0;
+    background: var(--emerald);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .btn-copy:hover { background: var(--emerald-dark); }
+
+  .crypto-proof-panel {
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .crypto-proof-panel h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .crypto-proof-panel p {
+    color: var(--slate-light);
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    align-items: end;
+  }
+
+  .form-field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: var(--slate);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+    background: #fff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--slate);
+  }
+
+  .form-field textarea { resize: vertical; }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: var(--slate-light);
+    margin-top: 4px;
+  }
+
+  .btn-submit {
+    grid-column: 1 / -1;
+    background: var(--emerald);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    justify-self: start;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.32);
+  }
+
+  .gift-card-panel {
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .gift-steps {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  .gift-steps li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 0.92rem;
+    color: var(--slate-light);
+  }
+
+  .gift-steps li span {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--emerald);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gift-intro { margin-bottom: 24px; }
+
+  .gift-intro h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .gift-intro p {
+    color: var(--slate-light);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .grid-3 { grid-template-columns: 1fr; }
+    .payment-grid { grid-template-columns: 1fr; }
+    .crypto-grid { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; }
+    .disclaimer { max-width: 100%; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: flex; }
+    .hero { padding: 140px 0 70px; }
+    .payment-box { padding: 28px 20px; }
+    .section { padding: 70px 0; }
+  }
+
+  @media (max-width: 480px) {
+    .detail-row { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .detail-value { text-align: left; }
+    .btn-submit { justify-self: stretch; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="#top" class="logo">Global<span>Hope</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+    <a href="#support" class="nav-cta">Support a Project</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="badge">100% Privately Underwritten &amp; Administered</div>
+    <h1>Empowering Communities <em>on a Global Scale.</em></h1>
+    <p>GlobalHope delivers direct, on-the-ground intervention in underserved regions worldwide — fully funded by our founder, so every voluntary contribution goes straight to the field.</p>
+    <a href="#support" class="btn-primary">Support Our Projects</a>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Structure</span>
+      <h2>Built for Transparency, Funded by Conviction</h2>
+      <p>GlobalHope operates on a simple principle: our founder bears every operational cost, so external support is never required — only welcomed for growth.</p>
+    </div>
+    <div class="grid-3" id="framework">
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Direct Intervention</h3>
+        <p>Our teams work directly within communities across the globe, delivering aid, education, and infrastructure without layers of bureaucracy.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Zero Overhead Cost</h3>
+        <p>All administrative expenses, salaries, and operating overhead are covered entirely out-of-pocket by our founder — not a cent from donors.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Global Transparency</h3>
+        <p>Every voluntary external contribution is tracked and reported separately, ensuring full visibility into how expansion funds are used.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="support">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Optional Contribution</span>
+      <h2>Manual Support Payment</h2>
+      <p>GlobalHope's core mission is already fully funded. If you wish to help us expand into new regions, you may contribute manually using the details below.</p>
+    </div>
+
+    <div class="payment-box">
+      <div class="payment-intro">
+        <h3>How to Send a Voluntary Contribution</h3>
+        <p>Since baseline operations require no external funding, we do not use automated payment processors. Please use one of the manual methods below.</p>
+      </div>
+
+      <div class="payment-grid">
+        <div class="payment-card">
+          <h4>International Bank Wire</h4>
+          <div class="detail-row">
+            <span class="detail-label">Bank Name</span>
+            <span class="detail-value">[BANK NAME PLACEHOLDER]</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Account Name</span>
+            <span class="detail-value">GlobalHope Foundation</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">IBAN</span>
+            <span class="detail-value">XXXX XXXX XXXX XXXX XXXX</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">SWIFT / BIC</span>
+            <span class="detail-value">XXXXXXXX</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Bank Country</span>
+            <span class="detail-value">[COUNTRY PLACEHOLDER]</span>
+          </div>
+        </div>
+
+        <div class="payment-card">
+          <h4>Cross-Border Digital Wallets</h4>
+          <div class="detail-row">
+            <span class="detail-label">Global Handle / ID</span>
+            <span class="detail-value">@GlobalHopeOrg</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Supported Apps</span>
+            <span class="detail-value">Wise, Revolut, PayPal</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Registered Email</span>
+            <span class="detail-value">[WALLET EMAIL PLACEHOLDER]</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Currency Accepted</span>
+            <span class="detail-value">USD / EUR / GBP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="verification-notice">
+        <span class="icon">⚠️</span>
+        <div>
+          <h4>Mandatory Verification Step</h4>
+          <p>After sending your transfer, please email a copy or screenshot of your transaction receipt to
+            <a href="mailto:contributions@globalhope.org">contributions@globalhope.org</a>
+            for record-keeping purposes. This helps us confirm and allocate your voluntary contribution accurately.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="crypto-support">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Additional Option</span>
+      <h2>Cryptocurrency &amp; Gift Card Support</h2>
+      <p>Prefer a digital method? You can also support GlobalHope's field expansion using cryptocurrency or a gift card.</p>
+    </div>
+
+    <div class="payment-choice">
+      <label for="paymentMethod">Payment option</label>
+      <select id="paymentMethod">
+        <option value="crypto" selected>Cryptocurrency</option>
+        <option value="gift-card">Gift card or e-gift code</option>
+      </select>
+    </div>
+
+    <div id="cryptoPaymentOption" class="payment-option">
+      <div class="crypto-grid">
+        <article class="crypto-card">
+          <div class="crypto-qr-wrap"><img src="Image/Bitcoin%20QR%20code.jpg" alt="Bitcoin wallet QR code" class="crypto-qr"></div>
+          <div class="crypto-card-body">
+            <div class="crypto-card-head"><h4>Bitcoin</h4><span class="crypto-badge">BTC</span></div>
+            <label for="bitcoinAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
+            <div class="copy-field">
+              <input id="bitcoinAddress" value="3DfMVLhNfUAQrhRSxy341KVsJnQpuDQx2o" readonly>
+              <button type="button" class="btn-copy" data-copy-value="3DfMVLhNfUAQrhRSxy341KVsJnQpuDQx2o">Copy</button>
+            </div>
+          </div>
+        </article>
+        <article class="crypto-card">
+          <div class="crypto-qr-wrap"><img src="Image/ETHERUM%20QR%20CODE.JPG" alt="Ethereum wallet QR code" class="crypto-qr"></div>
+          <div class="crypto-card-body">
+            <div class="crypto-card-head"><h4>Ethereum</h4><span class="crypto-badge">ETH</span></div>
+            <label for="ethereumAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
+            <div class="copy-field">
+              <input id="ethereumAddress" value="0xe968AE33B8a46f45cec836eFe852Ce7267f47a31" readonly>
+              <button type="button" class="btn-copy" data-copy-value="0xe968AE33B8a46f45cec836eFe852Ce7267f47a31">Copy</button>
+            </div>
+          </div>
+        </article>
+        <article class="crypto-card">
+          <div class="crypto-qr-wrap"><img src="Image/Litecoin%20QR%20code.jpg" alt="Litecoin wallet QR code" class="crypto-qr"></div>
+          <div class="crypto-card-body">
+            <div class="crypto-card-head"><h4>Litecoin</h4><span class="crypto-badge">LTC</span></div>
+            <label for="litecoinAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
+            <div class="copy-field">
+              <input id="litecoinAddress" value="MMuJ4C35oTyEF67xrdEk9CmF9npzUPDMyY" readonly>
+              <button type="button" class="btn-copy" data-copy-value="MMuJ4C35oTyEF67xrdEk9CmF9npzUPDMyY">Copy</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="crypto-proof-panel">
+        <h4>After a crypto payment</h4>
+        <p>Upload a screenshot or receipt showing the transaction hash, amount, and network so we can match your contribution.</p>
+        <form class="form-grid" action="#" method="POST" enctype="multipart/form-data">
+          <div class="form-field"><label for="cryptoName">Your name</label><input type="text" id="cryptoName" name="name" required></div>
+          <div class="form-field">
+            <label for="cryptoNetwork">Network</label>
+            <select id="cryptoNetwork" name="network" required>
+              <option value="" selected disabled>Choose</option>
+              <option>Bitcoin</option>
+              <option>Ethereum</option>
+              <option>Litecoin</option>
+            </select>
+          </div>
+          <div class="form-field"><label for="cryptoEvidence">Payment evidence</label><input type="file" id="cryptoEvidence" name="payment_evidence" accept="image/*,.pdf" required></div>
+          <button type="submit" class="btn-submit">Submit Payment Evidence</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="giftCardPaymentOption" class="payment-option" hidden>
+      <div class="grid-3" style="grid-template-columns: 1fr 1.4fr; align-items: start;">
+        <div class="gift-card-panel">
+          <div class="gift-intro">
+            <h4>Send a card, support a project</h4>
+            <p>Physical and e-gift cards are welcome. Take clear, readable photos in good light so the card and receipt can be reviewed quickly.</p>
+          </div>
+          <ol class="gift-steps">
+            <li><span>1</span>Photograph the front and back of the card.</li>
+            <li><span>2</span>Include the purchase receipt and card details.</li>
+            <li><span>3</span>Submit the form for manual review.</li>
+          </ol>
+        </div>
+        <div>
+          <form class="form-grid" action="#" method="POST" enctype="multipart/form-data">
+            <div class="form-field"><label for="giftName">Your name</label><input type="text" id="giftName" name="name" required></div>
+            <div class="form-field"><label for="giftEmail">Email address</label><input type="email" id="giftEmail" name="email" required></div>
+            <div class="form-field">
+              <label for="giftType">Card type</label>
+              <select id="giftType" name="card_type" required>
+                <option value="" selected disabled>Choose one</option>
+                <option>Physical gift card</option>
+                <option>Electronic gift card</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="giftBrand">Card brand</label>
+              <select id="giftBrand" name="card_brand" required>
+                <option value="" selected disabled>Choose a supported brand</option>
+                <option>Apple (iTunes)</option>
+                <option>Steam</option>
+                <option>Amazon</option>
+                <option>Visa</option>
+                <option>Vanilla</option>
+              </select>
+            </div>
+            <div class="form-field"><label for="giftAmountUsd">Card value (USD equivalent)</label><input type="number" id="giftAmountUsd" name="card_value_usd" min="25" step="0.01" placeholder="Minimum $25" required></div>
+            <div class="form-field"><label for="giftNumber">Card number or e-gift code</label><input type="text" id="giftNumber" name="card_number" required></div>
+            <div class="form-field"><label for="giftExpiry">Expiry date (if shown)</label><input type="text" id="giftExpiry" name="expiry_date" placeholder="MM / YY"></div>
+            <div class="form-field"><label for="cardFront">Card front photo</label><input type="file" id="cardFront" name="card_front" accept="image/*" required></div>
+            <div class="form-field"><label for="cardBack">Card back photo</label><input type="file" id="cardBack" name="card_back" accept="image/*" required></div>
+            <div class="form-field"><label for="cardReceipt">Purchase receipt</label><input type="file" id="cardReceipt" name="receipt" accept="image/*,.pdf" required></div>
+            <div class="form-field" style="grid-column: 1 / -1;"><label for="giftNotes">Notes</label><textarea id="giftNotes" name="notes" rows="3" placeholder="Optional: anything helpful about this gift card"></textarea></div>
+            <button type="submit" class="btn-submit">Submit Gift Card Details</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Global<span>Hope</span></div>
+        <p class="footer-tagline">A privately underwritten global NGO delivering direct intervention, zero overhead, and full transparency.</p>
+      </div>
+      <div class="disclaimer">
+        <strong>Legal Disclaimer:</strong> GlobalHope's baseline operations, salaries, and administrative overhead are entirely self-funded by its founder. GlobalHope does not rely on external contributions to function. Any voluntary funds received are directed solely toward project field expansion and are not used for operational or administrative purposes.
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 GlobalHope Foundation. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function () {
+    var links = document.querySelector('.nav-links');
+    var cta = document.querySelector('.nav-cta');
+    var open = links.style.display === 'flex';
+    links.style.display = open ? 'none' : 'flex';
+    cta.style.display = open ? 'none' : 'inline-block';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '72px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#fff';
+    links.style.padding = '20px 24px';
+    links.style.borderBottom = '1px solid #e2e8f0';
+  });
+
+  document.getElementById('paymentMethod').addEventListener('change', function (e) {
+    var isCrypto = e.target.value === 'crypto';
+    document.getElementById('cryptoPaymentOption').hidden = !isCrypto;
+    document.getElementById('giftCardPaymentOption').hidden = isCrypto;
+  });
+
+  document.querySelectorAll('.btn-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var value = btn.getAttribute('data-copy-value');
+      navigator.clipboard.writeText(value).then(function () {
+        var original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
