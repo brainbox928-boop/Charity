@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support GlobalHope — Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="checkout-page">
+    <section class="checkout-shell">
+
+      <!-- Brand header -->
+      <header class="checkout-top">
+        <a class="checkout-brand text-decoration-none text-reset" href="index.html">
+          <span class="checkout-mark"><i class="bi bi-heart-fill" aria-hidden="true"></i></span>
+          <span>
+          <h1 id="brand-name">GlobalHope</h1>
+          <p>Manual contribution checkout</p>
+          </span>
+        </a>
+        <span class="checkout-secure">
+          <i class="bi bi-shield-check" aria-hidden="true"></i>
+          Manual review
+        </span>
+      </header>
+
+      <!-- Progress indicator -->
+      <div class="checkout-content">
+      <ol class="checkout-progress" aria-label="Checkout progress">
+        <li class="is-active"><i>1</i><span>Details</span></li>
+        <li><i>2</i><span>Method</span></li>
+        <li><i>3</i><span>Instructions</span></li>
+        <li><i>4</i><span>Evidence</span></li>
+      </ol>
+
+      <!-- STEP 1 — Payment details -->
+      <form class="checkout-step is-active" id="checkout-form" novalidate>
+        <h2>Payment details</h2>
+        <p class="checkout-muted">GlobalHope is seeking external support for its community projects, and every contribution is appreciated. Choose a one-time gift or tell the team you are interested in monthly giving.</p>
+
+        <div class="row g-3">
+          <div class="field col-md-6">
+            <label class="form-label" for="payer-name">Full name</label>
+            <input class="form-control" id="payer-name" type="text" placeholder="Your full name" autocomplete="name" required />
+          </div>
+          <div class="field col-md-6">
+            <label class="form-label" for="payer-email">Email</label>
+            <input class="form-control" id="payer-email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="row g-3 mt-0">
+          <div class="field col-md-6">
+            <label class="form-label" for="amount">Contribution amount</label>
+            <span class="amount-presets" role="group" aria-label="Suggested contribution amounts">
+              <button class="amount-preset" type="button" data-amount="25" aria-pressed="false">$25</button>
+              <button class="amount-preset" type="button" data-amount="50" aria-pressed="false">$50</button>
+              <button class="amount-preset" type="button" data-amount="100" aria-pressed="false">$100</button>
+              <button class="amount-preset" type="button" data-amount="other" aria-pressed="false">Other</button>
+            </span>
+            <input class="form-control mt-1" id="amount" type="number" min="1" max="100000" step="0.01" value="25.00" inputmode="decimal" required />
+          </div>
+          <div class="field col-md-6">
+            <label class="form-label" for="currency">Currency</label>
+            <select class="form-select" id="currency">
+              <option value="USD" selected>USD — US Dollar</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="GBP">GBP — British Pound</option>
+              <option value="CAD">CAD — Canadian Dollar</option>
+              <option value="AUD">AUD — Australian Dollar</option>
+              <option value="NGN">NGN — Nigerian Naira</option>
+              <option value="INR">INR — Indian Rupee</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="field d-block mt-3 form-label" for="purpose"><i class="bi bi-grid-3x3-gap-fill me-1" aria-hidden="true"></i>Project you want to support</label>
+        <select class="form-select mt-1" id="purpose" required>
+          <option value="general">General support — where needed most</option>
+          <option value="food-security">Food Security &amp; Agricultural Development</option>
+          <option value="healthcare">Healthcare &amp; Medical Access</option>
+          <option value="shelter-housing">Emergency Shelter &amp; Affordable Housing</option>
+          <option value="education">Education &amp; Literacy Programs</option>
+          <option value="clean-water">Clean Water &amp; Sanitation Access</option>
+          <option value="animal-welfare">Animal Welfare &amp; Rescue</option>
+          <option value="environment">Environmental Conservation &amp; Climate Tech</option>
+          <option value="disaster-relief">Disaster Relief &amp; Emergency Response</option>
+          <option value="arts-culture">Arts, Culture &amp; Heritage Preservation</option>
+          <option value="elderly-support">Elderly Support &amp; Senior Care</option>
+          <option value="veterans-first-responders">Veterans &amp; First Responder Assistance</option>
+          <option value="legal-aid">Legal Aid &amp; Social Justice Advocacy</option>
+          <option value="mental-health">Mental Health &amp; Suicide Prevention</option>
+          <option value="economic-empowerment">Economic Empowerment &amp; Micro-Loans</option>
+          <option value="youth-mentorship">Youth Mentorship &amp; After-School Programs</option>
+        </select>
+
+        <div class="checkout-preferences">
+          <label class="form-check"><input class="form-check-input" id="monthly-intent" type="checkbox"><span class="form-check-label">I am interested in making this a monthly contribution</span></label>
+          <p>This page cannot schedule recurring payments. The team can contact you about available monthly options.</p>
+          <label class="form-check"><input class="form-check-input" id="receipt-request" type="checkbox" checked><span class="form-check-label">Please email me a contribution receipt after manual review</span></label>
+          <p>This is a receipt request, not an automated or tax-deductible receipt. Eligibility depends on the organization's status and local rules.</p>
+          <label class="form-check"><input class="form-check-input" id="donor-public" type="checkbox"><span class="form-check-label">I consent to my first name and contribution amount being shared publicly after verification</span></label>
+        </div>
+
+        <p class="checkout-legal">Continuing means you have read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Contribution Terms</a>.</p>
+
+        <p class="error" id="err-1" hidden></p>
+
+        <div class="checkout-actions checkout-actions--end">
+          <button class="btn checkout-btn checkout-btn-primary" type="submit">Continue <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></button>
+        </div>
+      </form>
+
+      <!-- STEP 2 — Choose method -->
+      <section class="checkout-step" id="step-2">
+        <h2>Choose a payment method</h2>
+        <p class="checkout-muted">Choose a method to see what to do next.</p>
+
+        <div class="checkout-methods">
+          <button class="checkout-method" type="button" data-method="bank" aria-pressed="false">
+            <i class="checkout-method__icon bi bi-bank" aria-hidden="true"></i>
+            <strong>Bank transfer</strong>
+            <small>Request verified account details</small>
+          </button>
+
+          <button class="checkout-method" type="button" data-method="paypal" aria-pressed="false">
+            <i class="checkout-method__icon bi bi-wallet2" aria-hidden="true"></i>
+            <strong>PayPal</strong>
+            <small>Request the official donation link</small>
+          </button>
+
+          <button class="checkout-method" type="button" data-method="crypto" aria-pressed="false">
+            <i class="checkout-method__icon bi bi-currency-bitcoin" aria-hidden="true"></i>
+            <strong>Cryptocurrency</strong>
+            <small>BTC, ETH, and LTC wallet details</small>
+          </button>
+        </div>
+
+        <div class="checkout-actions">
+          <button class="btn checkout-btn checkout-btn-ghost" type="button" data-back="1"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Back</button>
+        </div>
+      </section>
+
+      <!-- STEP 3 — Method-specific instructions (rendered by JS) -->
+      <section class="checkout-step" id="step-3">
+        <h2 id="instructions-title">Payment instructions</h2>
+        <p class="checkout-muted">Please review the details carefully before sending any funds.</p>
+        <div class="checkout-summary js-summary" id="summary-3"></div>
+        <div id="instructions-body"></div>
+
+        <div class="checkout-actions">
+          <button class="btn checkout-btn checkout-btn-ghost" type="button" data-back="2"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Change method</button>
+          <button class="btn checkout-btn checkout-btn-primary" type="button" id="paid-btn">Continue to confirmation <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></button>
+        </div>
+      </section>
+
+      <!-- STEP 4 — Confirm payment -->
+      <form class="checkout-step" id="step-4" name="payment-evidence" method="POST" action="payment-success.html" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="payment-evidence" />
+        <div class="visually-hidden" aria-hidden="true"><label>Leave this field empty<input name="bot-field" tabindex="-1" autocomplete="off" /></label></div>
+        <input type="hidden" name="donor-name" id="submission-name" />
+        <input type="hidden" name="donor-email" id="submission-email" />
+        <input type="hidden" name="contribution-amount" id="submission-amount" />
+        <input type="hidden" name="contribution-currency" id="submission-currency" />
+        <input type="hidden" name="project" id="submission-project" />
+        <input type="hidden" name="payment-method" id="submission-method" />
+        <input type="hidden" name="crypto-currency" id="submission-crypto" />
+        <input type="hidden" name="monthly-giving-interest" id="submission-monthly" />
+        <input type="hidden" name="receipt-requested" id="submission-receipt" />
+        <input type="hidden" name="public-listing-consent" id="submission-consent" />
+        <h2>Upload payment evidence</h2>
+        <p class="checkout-muted">Add the payment reference and upload a receipt or screenshot. GlobalHope will review the submission manually.</p>
+        <div class="checkout-summary js-summary" id="summary-4"></div>
+
+        <label class="field d-block"><span id="ref-label">Payment reference</span>
+          <input class="form-control mt-1" id="reference" name="payment-reference" type="text" placeholder="Transaction ID or bank reference" maxlength="120" required />
+        </label>
+
+        <label class="field d-block mt-3">Note <span class="text-secondary fw-normal">(optional)</span>
+          <textarea class="form-control mt-1" id="note" name="donor-note" rows="3" maxlength="500" placeholder="Anything helpful for matching your contribution?"></textarea>
+        </label>
+
+        <label class="field d-block mt-3" for="payment-evidence">Payment receipt or screenshot
+          <input class="form-control mt-1" id="payment-evidence" name="payment-evidence" type="file" accept="image/*,.pdf" required />
+        </label>
+        <p class="checkout-upload-note"><i class="bi bi-shield-lock me-1" aria-hidden="true"></i>Upload only evidence needed to verify this transfer. Hide unrelated balances, full card numbers, passwords, and security codes.</p>
+
+        <p class="error" id="err-4" hidden></p>
+
+        <div class="checkout-actions">
+          <button class="btn checkout-btn checkout-btn-ghost" type="button" data-back="3"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Back</button>
+          <button class="btn checkout-btn checkout-btn-primary" type="submit">Submit evidence for review <i class="bi bi-cloud-arrow-up ms-2" aria-hidden="true"></i></button>
+        </div>
+      </form>
+      </div>
+
+      <footer class="checkout-footer">
+        Manual checkout only. No card payment is processed on this page. <a href="privacy.html">Privacy</a> · <a href="terms.html">Contribution terms</a> · Questions? <a href="mailto:contributions@globalhope.org">contributions@globalhope.org</a>
+      </footer>
+
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

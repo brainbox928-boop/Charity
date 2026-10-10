@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GlobalHope — Empowering Communities on a Global Scale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <style>
   :root {
     --emerald: #10b981;
@@ -695,6 +700,7 @@
     .btn-submit { justify-self: stretch; text-align: center; }
   }
 </style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -704,9 +710,13 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#framework">Framework</a></li>
+      <li><a href="projects.html">Our causes</a></li>
+      <li><a href="#campaign-story">Our story</a></li>
+      <li><a href="#campaign-progress">Progress</a></li>
+      <li><a href="#impact">Impact</a></li>
       <li><a href="#support">Support</a></li>
     </ul>
-    <a href="#support" class="nav-cta">Support a Project</a>
+    <a href="projects.html" class="nav-cta">Give to a project <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
     <button class="nav-toggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -715,36 +725,115 @@
 
 <header class="hero" id="top">
   <div class="container">
-    <div class="badge">100% Privately Underwritten &amp; Administered</div>
-    <h1>Empowering Communities <em>on a Global Scale.</em></h1>
-    <p>GlobalHope delivers direct, on-the-ground intervention in underserved regions worldwide — fully funded by our founder, so every voluntary contribution goes straight to the field.</p>
-    <a href="#support" class="btn-primary">Support Our Projects</a>
+    <div class="badge"><i class="bi bi-globe me-2" aria-hidden="true"></i>Community-led. Support-powered.</div>
+    <h1>Helping communities thrive <em>around the world.</em></h1>
+    <p>GlobalHope is building a platform that connects people everywhere with community initiatives around the world. We believe every community can contribute to and benefit from shared support, practical resources, and local ideas. Every contribution is sincerely appreciated.</p>
+    <a href="projects.html" class="btn-primary"><i class="bi bi-heart-fill me-2" aria-hidden="true"></i>Explore our projects</a>
   </div>
 </header>
 
 <section class="section" id="about">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Our Structure</span>
-      <h2>Built for Transparency, Funded by Conviction</h2>
-      <p>GlobalHope operates on a simple principle: our founder bears every operational cost, so external support is never required — only welcomed for growth.</p>
+      <span class="eyebrow">Why GlobalHope exists</span>
+      <h2>Good ideas need people behind them</h2>
+      <p>Community projects need practical resources, trusted partnerships, and people willing to help. GlobalHope invites people everywhere to support locally led initiatives around the world. Every contribution is appreciated and helps us work toward these goals.</p>
     </div>
     <div class="grid-3" id="framework">
       <div class="card">
         <div class="card-icon">🌍</div>
-        <h3>Direct Intervention</h3>
-        <p>Our teams work directly within communities across the globe, delivering aid, education, and infrastructure without layers of bureaucracy.</p>
+        <h3>Community-led priorities</h3>
+        <p>We want project plans to reflect local priorities, from food access and healthcare to education, safe housing, and cultural work.</p>
       </div>
       <div class="card">
         <div class="card-icon">🛡️</div>
-        <h3>Zero Overhead Cost</h3>
-        <p>All administrative expenses, salaries, and operating overhead are covered entirely out-of-pocket by our founder — not a cent from donors.</p>
+        <h3>Your support matters</h3>
+        <p>External support is needed to help projects access supplies, equipment, services, and other resources. We are grateful to everyone who helps move this work forward.</p>
       </div>
       <div class="card">
         <div class="card-icon">📊</div>
-        <h3>Global Transparency</h3>
-        <p>Every voluntary external contribution is tracked and reported separately, ensuring full visibility into how expansion funds are used.</p>
+        <h3>Clear project information</h3>
+        <p>Each project page explains its purpose and examples of possible needs. We aim to share verified updates as partner plans, funding, and work develop.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section projects-section" id="projects">
+  <div class="container featured-projects">
+    <div>
+      <span class="eyebrow"><i class="bi bi-sun me-1" aria-hidden="true"></i>People at the heart of our work</span>
+      <h2>Small actions. Stronger communities.</h2>
+      <p>From food security and healthcare to arts, conservation, and youth mentorship, explore the needs behind each initiative and choose where you would like to help.</p>
+      <a class="btn-primary" href="projects.html">Explore all 15 projects <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+    </div>
+    <div class="featured-project-links" aria-label="Featured projects">
+      <a href="projects.html?id=food-security"><i class="bi bi-basket2-fill" aria-hidden="true"></i><span>Food security &amp; agriculture</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      <a href="projects.html?id=healthcare"><i class="bi bi-heart-pulse-fill" aria-hidden="true"></i><span>Healthcare &amp; medical access</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      <a href="projects.html?id=education"><i class="bi bi-book-half" aria-hidden="true"></i><span>Education &amp; literacy</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section story-section" id="campaign-story">
+  <div class="container story-layout">
+    <div class="story-copy">
+      <span class="eyebrow"><i class="bi bi-play-circle me-1" aria-hidden="true"></i>Our story</span>
+      <h2>Local work, shaped around real needs</h2>
+      <p>We are seeking external support to help develop and deliver community projects around the world. Your contribution is genuinely appreciated and can help local communities access resources for their priorities.</p>
+      <p class="story-placeholder">The platform brings people together around practical community needs, including learning resources, healthcare access, food programs, safe housing, and local opportunities.</p>
+      <a class="cause-link" href="payment.html?amount=25">Support the work <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="story-media-wrap">
+      <div class="story-video-placeholder"><i class="bi bi-camera-video" aria-hidden="true"></i><span>GlobalHope community campaign</span></div>
+      <p class="media-caption"><i class="bi bi-info-circle me-1" aria-hidden="true"></i>Project stories and updates will be shared as community work develops.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section campaign-section" id="campaign-progress">
+  <div class="container campaign-layout">
+    <div>
+      <span class="eyebrow"><i class="bi bi-graph-up-arrow me-1" aria-hidden="true"></i>Campaign progress</span>
+      <h2>Every contribution moves the work forward</h2>
+      <p class="campaign-copy">Your contribution helps move community-led projects from plans toward practical support.</p>
+    </div>
+    <div class="campaign-tracker" id="campaign-tracker" data-raised="1200" data-goal="8000" data-deadline="">
+      <div class="tracker-heading"><strong id="campaign-raised">$1,200 raised</strong><span id="campaign-percent">15% funded</span></div>
+      <div class="progress" role="progressbar" aria-label="Campaign funding progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-bar" id="campaign-progress-bar" style="width: 0%"></div>
+      </div>
+      <div class="tracker-footer"><span id="campaign-goal">Goal: $8,000</span><span id="campaign-countdown" hidden></span></div>
+      <p class="tracker-empty" id="campaign-empty" hidden></p>
+    </div>
+  </div>
+</section>
+
+<section class="section impact-section" id="impact">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow"><i class="bi bi-stars me-1" aria-hidden="true"></i>Giving with purpose</span>
+      <h2>Show the difference a gift can make</h2>
+      <p>Suggested gift amounts can help meet needs such as these. Actual costs and impact vary by location and are confirmed with project partners.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4"><article class="impact-item"><span class="impact-icon"><i class="bi bi-book-half" aria-hidden="true"></i></span><strong>$25 suggested gift</strong><p>Can contribute toward books, stationery, or other learning materials for a community program.</p><a class="impact-link" href="payment.html?project=education&amount=25">Give $25 <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article></div>
+      <div class="col-md-4"><article class="impact-item"><span class="impact-icon impact-icon--coral"><i class="bi bi-heart-pulse-fill" aria-hidden="true"></i></span><strong>$50 suggested gift</strong><p>Can contribute toward basic clinic supplies or community health resources.</p><a class="impact-link" href="payment.html?project=healthcare&amount=50">Give $50 <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article></div>
+      <div class="col-md-4"><article class="impact-item"><span class="impact-icon impact-icon--gold"><i class="bi bi-basket2-fill" aria-hidden="true"></i></span><strong>$100 suggested gift</strong><p>Can contribute toward food purchasing, pantry supplies, or distribution for a local food program.</p><a class="impact-link" href="payment.html?project=food-security&amount=100">Give $100 <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article></div>
+    </div>
+  </div>
+</section>
+
+<section class="section donor-section" id="supporters">
+  <div class="container donor-layout">
+    <div>
+      <span class="eyebrow"><i class="bi bi-people me-1" aria-hidden="true"></i>Community of care</span>
+      <h2>Supporters who make this work possible</h2>
+      <p>Supporter stories and contribution updates are shared only with permission and after verification.</p>
+    </div>
+    <div class="donor-roll" aria-live="polite">
+      <i class="bi bi-chat-heart" aria-hidden="true"></i>
+      <p>Verified supporter updates will appear here as contributions are reviewed and shared with consent.</p>
     </div>
   </div>
 </section>
@@ -752,251 +841,40 @@
 <section class="section section-alt" id="support">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Optional Contribution</span>
-      <h2>Manual Support Payment</h2>
-      <p>GlobalHope's core mission is already fully funded. If you wish to help us expand into new regions, you may contribute manually using the details below.</p>
+      <span class="eyebrow">A little help goes a long way</span>
+      <h2>Ready to make a difference?</h2>
+      <p>External support helps us work toward community-led project goals. Contributions are voluntary, and every gift is appreciated.</p>
     </div>
 
-    <div class="payment-box">
-      <div class="payment-intro">
-        <h3>How to Send a Voluntary Contribution</h3>
-        <p>Since baseline operations require no external funding, we do not use automated payment processors. Please use one of the manual methods below.</p>
-      </div>
-
-      <div class="payment-grid">
-        <div class="payment-card">
-          <h4>International Bank Wire</h4>
-          <div class="detail-row">
-            <span class="detail-label">Bank Name</span>
-            <span class="detail-value">[BANK NAME PLACEHOLDER]</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Account Name</span>
-            <span class="detail-value">GlobalHope Foundation</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">IBAN</span>
-            <span class="detail-value">XXXX XXXX XXXX XXXX XXXX</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">SWIFT / BIC</span>
-            <span class="detail-value">XXXXXXXX</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Bank Country</span>
-            <span class="detail-value">[COUNTRY PLACEHOLDER]</span>
-          </div>
-        </div>
-
-        <div class="payment-card">
-          <h4>Cross-Border Digital Wallets</h4>
-          <div class="detail-row">
-            <span class="detail-label">Global Handle / ID</span>
-            <span class="detail-value">@GlobalHopeOrg</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Supported Apps</span>
-            <span class="detail-value">Wise, Revolut, PayPal</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Registered Email</span>
-            <span class="detail-value">[WALLET EMAIL PLACEHOLDER]</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Currency Accepted</span>
-            <span class="detail-value">USD / EUR / GBP</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="verification-notice">
-        <span class="icon">⚠️</span>
-        <div>
-          <h4>Mandatory Verification Step</h4>
-          <p>After sending your transfer, please email a copy or screenshot of your transaction receipt to
-            <a href="mailto:contributions@globalhope.org">contributions@globalhope.org</a>
-            for record-keeping purposes. This helps us confirm and allocate your voluntary contribution accurately.</p>
-        </div>
-      </div>
+    <div class="support-cta">
+      <div><span class="support-icon"><i class="bi bi-heart-fill" aria-hidden="true"></i></span><span><strong>Your generosity, their brighter tomorrow.</strong><small>Choose an amount that feels right for you.</small></span></div>
+      <a class="btn-primary" href="payment.html?amount=25">Choose a contribution <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
     </div>
+    <p class="payment-policies">By continuing, you can review our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Contribution Terms</a>. No card payment is processed on this website.</p>
   </div>
 </section>
 
-<section class="section" id="crypto-support">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Additional Option</span>
-      <h2>Cryptocurrency &amp; Gift Card Support</h2>
-      <p>Prefer a digital method? You can also support GlobalHope's field expansion using cryptocurrency or a gift card.</p>
-    </div>
-
-    <div class="payment-choice">
-      <label for="paymentMethod">Payment option</label>
-      <select id="paymentMethod">
-        <option value="crypto" selected>Cryptocurrency</option>
-        <option value="gift-card">Gift card or e-gift code</option>
-      </select>
-    </div>
-
-    <div id="cryptoPaymentOption" class="payment-option">
-      <div class="crypto-grid">
-        <article class="crypto-card">
-          <div class="crypto-qr-wrap"><img src="Image/Bitcoin%20QR%20code.jpg" alt="Bitcoin wallet QR code" class="crypto-qr"></div>
-          <div class="crypto-card-body">
-            <div class="crypto-card-head"><h4>Bitcoin</h4><span class="crypto-badge">BTC</span></div>
-            <label for="bitcoinAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
-            <div class="copy-field">
-              <input id="bitcoinAddress" value="3DfMVLhNfUAQrhRSxy341KVsJnQpuDQx2o" readonly>
-              <button type="button" class="btn-copy" data-copy-value="3DfMVLhNfUAQrhRSxy341KVsJnQpuDQx2o">Copy</button>
-            </div>
-          </div>
-        </article>
-        <article class="crypto-card">
-          <div class="crypto-qr-wrap"><img src="Image/ETHERUM%20QR%20CODE.JPG" alt="Ethereum wallet QR code" class="crypto-qr"></div>
-          <div class="crypto-card-body">
-            <div class="crypto-card-head"><h4>Ethereum</h4><span class="crypto-badge">ETH</span></div>
-            <label for="ethereumAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
-            <div class="copy-field">
-              <input id="ethereumAddress" value="0xe968AE33B8a46f45cec836eFe852Ce7267f47a31" readonly>
-              <button type="button" class="btn-copy" data-copy-value="0xe968AE33B8a46f45cec836eFe852Ce7267f47a31">Copy</button>
-            </div>
-          </div>
-        </article>
-        <article class="crypto-card">
-          <div class="crypto-qr-wrap"><img src="Image/Litecoin%20QR%20code.jpg" alt="Litecoin wallet QR code" class="crypto-qr"></div>
-          <div class="crypto-card-body">
-            <div class="crypto-card-head"><h4>Litecoin</h4><span class="crypto-badge">LTC</span></div>
-            <label for="litecoinAddress" class="form-note" style="display:block;margin-bottom:6px;">Wallet address</label>
-            <div class="copy-field">
-              <input id="litecoinAddress" value="MMuJ4C35oTyEF67xrdEk9CmF9npzUPDMyY" readonly>
-              <button type="button" class="btn-copy" data-copy-value="MMuJ4C35oTyEF67xrdEk9CmF9npzUPDMyY">Copy</button>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="crypto-proof-panel">
-        <h4>After a crypto payment</h4>
-        <p>Upload a screenshot or receipt showing the transaction hash, amount, and network so we can match your contribution.</p>
-        <form class="form-grid" action="#" method="POST" enctype="multipart/form-data">
-          <div class="form-field"><label for="cryptoName">Your name</label><input type="text" id="cryptoName" name="name" required></div>
-          <div class="form-field">
-            <label for="cryptoNetwork">Network</label>
-            <select id="cryptoNetwork" name="network" required>
-              <option value="" selected disabled>Choose</option>
-              <option>Bitcoin</option>
-              <option>Ethereum</option>
-              <option>Litecoin</option>
-            </select>
-          </div>
-          <div class="form-field"><label for="cryptoEvidence">Payment evidence</label><input type="file" id="cryptoEvidence" name="payment_evidence" accept="image/*,.pdf" required></div>
-          <button type="submit" class="btn-submit">Submit Payment Evidence</button>
-        </form>
-      </div>
-    </div>
-
-    <div id="giftCardPaymentOption" class="payment-option" hidden>
-      <div class="grid-3" style="grid-template-columns: 1fr 1.4fr; align-items: start;">
-        <div class="gift-card-panel">
-          <div class="gift-intro">
-            <h4>Send a card, support a project</h4>
-            <p>Physical and e-gift cards are welcome. Take clear, readable photos in good light so the card and receipt can be reviewed quickly.</p>
-          </div>
-          <ol class="gift-steps">
-            <li><span>1</span>Photograph the front and back of the card.</li>
-            <li><span>2</span>Include the purchase receipt and card details.</li>
-            <li><span>3</span>Submit the form for manual review.</li>
-          </ol>
-        </div>
-        <div>
-          <form class="form-grid" action="#" method="POST" enctype="multipart/form-data">
-            <div class="form-field"><label for="giftName">Your name</label><input type="text" id="giftName" name="name" required></div>
-            <div class="form-field"><label for="giftEmail">Email address</label><input type="email" id="giftEmail" name="email" required></div>
-            <div class="form-field">
-              <label for="giftType">Card type</label>
-              <select id="giftType" name="card_type" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>Physical gift card</option>
-                <option>Electronic gift card</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="giftBrand">Card brand</label>
-              <select id="giftBrand" name="card_brand" required>
-                <option value="" selected disabled>Choose a supported brand</option>
-                <option>Apple (iTunes)</option>
-                <option>Steam</option>
-                <option>Amazon</option>
-                <option>Visa</option>
-                <option>Vanilla</option>
-              </select>
-            </div>
-            <div class="form-field"><label for="giftAmountUsd">Card value (USD equivalent)</label><input type="number" id="giftAmountUsd" name="card_value_usd" min="25" step="0.01" placeholder="Minimum $25" required></div>
-            <div class="form-field"><label for="giftNumber">Card number or e-gift code</label><input type="text" id="giftNumber" name="card_number" required></div>
-            <div class="form-field"><label for="giftExpiry">Expiry date (if shown)</label><input type="text" id="giftExpiry" name="expiry_date" placeholder="MM / YY"></div>
-            <div class="form-field"><label for="cardFront">Card front photo</label><input type="file" id="cardFront" name="card_front" accept="image/*" required></div>
-            <div class="form-field"><label for="cardBack">Card back photo</label><input type="file" id="cardBack" name="card_back" accept="image/*" required></div>
-            <div class="form-field"><label for="cardReceipt">Purchase receipt</label><input type="file" id="cardReceipt" name="receipt" accept="image/*,.pdf" required></div>
-            <div class="form-field" style="grid-column: 1 / -1;"><label for="giftNotes">Notes</label><textarea id="giftNotes" name="notes" rows="3" placeholder="Optional: anything helpful about this gift card"></textarea></div>
-            <button type="submit" class="btn-submit">Submit Gift Card Details</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="container">
     <div class="footer-top">
       <div>
         <div class="footer-logo">Global<span>Hope</span></div>
-        <p class="footer-tagline">A privately underwritten global NGO delivering direct intervention, zero overhead, and full transparency.</p>
+        <p class="footer-tagline">A community-support platform connecting people with locally led initiatives around the world.</p>
       </div>
       <div class="disclaimer">
-        <strong>Legal Disclaimer:</strong> GlobalHope's baseline operations, salaries, and administrative overhead are entirely self-funded by its founder. GlobalHope does not rely on external contributions to function. Any voluntary funds received are directed solely toward project field expansion and are not used for operational or administrative purposes.
+        <strong>How support helps:</strong> GlobalHope is seeking external contributions to help develop and support its community initiatives. Project needs and funding plans will be shared as they are confirmed. Contributions are not processed automatically through this website.
       </div>
     </div>
     <div class="footer-bottom">
       &copy; 2026 GlobalHope Foundation. All rights reserved.
+      <span class="footer-policies"><a href="privacy.html">Privacy</a><a href="terms.html">Contribution terms</a></span>
     </div>
   </div>
 </footer>
 
-<script>
-  document.querySelector('.nav-toggle').addEventListener('click', function () {
-    var links = document.querySelector('.nav-links');
-    var cta = document.querySelector('.nav-cta');
-    var open = links.style.display === 'flex';
-    links.style.display = open ? 'none' : 'flex';
-    cta.style.display = open ? 'none' : 'inline-block';
-    links.style.flexDirection = 'column';
-    links.style.position = 'absolute';
-    links.style.top = '72px';
-    links.style.left = '0';
-    links.style.right = '0';
-    links.style.background = '#fff';
-    links.style.padding = '20px 24px';
-    links.style.borderBottom = '1px solid #e2e8f0';
-  });
-
-  document.getElementById('paymentMethod').addEventListener('change', function (e) {
-    var isCrypto = e.target.value === 'crypto';
-    document.getElementById('cryptoPaymentOption').hidden = !isCrypto;
-    document.getElementById('giftCardPaymentOption').hidden = isCrypto;
-  });
-
-  document.querySelectorAll('.btn-copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var value = btn.getAttribute('data-copy-value');
-      navigator.clipboard.writeText(value).then(function () {
-        var original = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(function () { btn.textContent = original; }, 1800);
-      });
-    });
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
