@@ -1,20 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
   if (toggle) {
+    const navbar = toggle.closest(".navbar");
+    const links = document.querySelector("#primary-navigation");
     toggle.addEventListener("click", () => {
-      const links = document.querySelector(".nav-links");
-      const cta = document.querySelector(".nav-cta");
-      const open = links.style.display === "flex";
-      links.style.display = open ? "none" : "flex";
-      cta.style.display = open ? "none" : "inline-block";
-      links.style.flexDirection = "column";
-      links.style.position = "absolute";
-      links.style.top = "72px";
-      links.style.left = "0";
-      links.style.right = "0";
-      links.style.background = "#fff";
-      links.style.padding = "20px 24px";
-      links.style.borderBottom = "1px solid #e2e8e0";
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      navbar.classList.toggle("menu-open", !open);
+    });
+    links?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        navbar.classList.remove("menu-open");
+      });
     });
   }
 

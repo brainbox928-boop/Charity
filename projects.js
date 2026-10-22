@@ -138,7 +138,7 @@ if (directory) {
         <h2>${escapeHtml(project.title)}</h2>
         <p>${escapeHtml(project.summary)}</p>
       </div>
-      <a class="project-listing-link" href="projects.html?id=${encodeURIComponent(project.id)}" aria-label="Read about ${escapeHtml(project.title)}"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      <a class="project-listing-link" href="projects.html?id=${encodeURIComponent(project.id)}" aria-label="View project: ${escapeHtml(project.title)}"><i class="bi bi-eye-fill" aria-hidden="true"></i><span>View project</span></a>
     </article>`).join("");
 }
 
@@ -186,12 +186,13 @@ if (detail) {
         <ul class="project-focus-list">${project.examples.map((example) => `<li><i class="bi bi-check2-circle" aria-hidden="true"></i>${escapeHtml(example)}</li>`).join("")}</ul>
       </section>
       <section class="project-detail-section">
-        <div class="project-section-heading"><span class="eyebrow">Stories from the work</span><h2>Project photos</h2><p>Community updates and approved project stories will be shared here.</p></div>
+        <div class="project-section-heading"><span class="eyebrow">Stories from the work 📸</span><h2>Project photos</h2><p>Community updates and approved project stories will be shared here.</p></div>
         <div class="detail-image-grid">${imageSlots}</div>
       </section>
       <section class="project-detail-section project-video-section">
-        <div class="project-section-heading"><span class="eyebrow">From the community</span><h2>Project video</h2><p>Stories from community projects help show the work and the people behind it.</p></div>
+        <div class="project-section-heading"><span class="eyebrow">From the community 🎥</span><h2>Project video</h2><p>Stories from community projects help show the work and the people behind it.</p></div>
         ${video}
+        <p class="project-edit-note"><strong>Update this project’s media:</strong> In <code>projects.js</code>, find the <code>${escapeHtml(project.id)}</code> entry and set <code>images</code> to up to four paths (for example, <code>["Image/photo-1.jpg", "Image/photo-2.jpg"]</code>) and <code>video</code> to a video path (for example, <code>"Image/project-video.mp4"</code>). Put the files in the <code>Image</code> folder or update the paths to match their location. An optional <code>videoPoster</code> path sets the video preview image.</p>
       </section>
       <section class="related-projects">
         <div class="project-section-heading"><span class="eyebrow">Keep exploring</span><h2>Related initiatives</h2></div>
