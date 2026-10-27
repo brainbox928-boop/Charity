@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cause = causes[params.get("project")] ? params.get("project") : "general";
   const amountFromLink = Number(params.get("amount"));
   const amountInput = document.querySelector("#amount");
+  const currencyInput = document.querySelector("#currency");
   const purposeInput = document.querySelector("#purpose");
   if (amountFromLink >= 1 && amountFromLink <= 100000) amountInput.value = amountFromLink.toFixed(2);
   purposeInput.value = cause;
@@ -82,6 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const amountButtons = [...document.querySelectorAll(".amount-preset")];
   const updateAmountButtons = () => {
     amountButtons.forEach((button) => {
+      if (button.dataset.amount !== "other") {
+        button.textContent = new Intl.NumberFormat(undefined, {
+          style: "currency",
+          currency: currencyInput.value,
+          maximumFractionDigits: 0
+        }).format(Number(button.dataset.amount));
+      }
       const isSelected = button.dataset.amount === "other"
         ? ![25, 50, 100].includes(Number(amountInput.value))
         : Number(button.dataset.amount) === Number(amountInput.value);
@@ -102,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   amountInput.addEventListener("input", updateAmountButtons);
+  currencyInput.addEventListener("change", updateAmountButtons);
   updateAmountButtons();
 
   const steps = [...document.querySelectorAll(".checkout-step")];
@@ -159,6 +168,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const instructions = document.querySelector("#instructions-body");
   const methodNames = { bank: "Bank transfer", paypal: "PayPal", crypto: "Cryptocurrency" };
+  const copyText = async (value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      return;
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = value;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      let copied;
+      try {
+        copied = document.execCommand("copy");
+      } finally {
+        textarea.remove();
+      }
+      if (!copied) throw new Error("Clipboard copy failed");
+    }
+  };
+  const updateCopyButton = (button, value, label) => {
+    copyText(value).then(() => {
+      button.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
+      button.setAttribute("aria-label", `${label} copied`);
+      button.title = `${label} copied`;
+    }).catch(() => {
+      button.innerHTML = '<i class="bi bi-exclamation-circle" aria-hidden="true"></i>';
+      button.setAttribute("aria-label", `Could not copy ${label.toLowerCase()}`);
+      button.title = `Could not copy ${label.toLowerCase()}; select the text to copy it`;
+    });
+  };
   const cryptoOptions = {
     bitcoin: {
       name: "Bitcoin",
@@ -215,17 +256,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>`;
         instructions.querySelector("#crypto-selection-error").hidden = true;
-        walletDetails.querySelector("[data-copy-value]").addEventListener("click", async (event) => {
+        walletDetails.querySelector("[data-copy-value]").addEventListener("click", (event) => {
           const copyButton = event.currentTarget;
-          try {
-            await navigator.clipboard.writeText(copyButton.dataset.copyValue);
-            copyButton.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
-            copyButton.setAttribute("aria-label", "Address copied");
-          } catch {
-            const addressInput = walletDetails.querySelector("input");
-            addressInput.select();
-            document.execCommand("copy");
-          }
+          updateCopyButton(copyButton, copyButton.dataset.copyValue, `${crypto.name} address`);
         });
       });
     } else if (selectedMethod === "bank") {
@@ -239,19 +272,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <div><dt>Routing number</dt><dd>101019644<button class="bank-copy" type="button" data-copy-value="101019644" aria-label="Copy routing number"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
             <div><dt>Bank address</dt><dd>9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA<button class="bank-copy" type="button" data-copy-value="9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA" aria-label="Copy bank address"><i class="bi bi-copy" aria-hidden="true"></i></button></dd></div>
           </dl>
-          <p class="checkout-notice">This website does not initiate the bank transfer. Check the transfer details before sending and submit your payment receipt on the next step.</p>
-        </div>`;
-      instructions.querySelectorAll(".bank-copy").forEach((button) => {
-        button.addEventListener("click", async () => {
-          try {
-            await navigator.clipboard.writeText(button.dataset.copyValue);
-            button.innerHTML = '<i class="bi bi-check2" aria-hidden="true"></i>';
-            button.setAttribute("aria-label", "Copied");
-          } catch {
-            button.setAttribute("aria-label", "Copy unavailable; select the bank detail text");
-          }
-        });
-      });
+              <p class="checkout-notice">This website does not initiate the bank transfer. Check the transfer details before sending and submit your payment receipt on the next step.</p>
+            </div>`;
+          instructions.querySelectorAll(".bank-copy").forEach((button) => {
+            button.addEventListener("click", () => {
+              const label = button.getAttribute("aria-label").replace(/^Copy /, "");
+              updateCopyButton(button, button.dataset.copyValue, label);
+            });
+          });
     } else {
       instructions.innerHTML = `<div class="checkout-instructions"><h3>Request the verified PayPal link</h3><p>A PayPal account has not been configured on this page. Email <a href="mailto:${supportEmail}">${supportEmail}</a> to request the official donation link before sending funds.</p></div>`;
     }
