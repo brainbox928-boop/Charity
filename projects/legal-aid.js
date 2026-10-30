@@ -1,4 +1,4 @@
-// legal-aid : project text (add pictures/video in projects.html, data-media="legal-aid")
+// legal-aid : project text (add pictures in projects.html, data-media="legal-aid")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "legal-aid",

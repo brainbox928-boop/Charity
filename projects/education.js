@@ -1,4 +1,4 @@
-// education : project text (add pictures/video in projects.html, data-media="education")
+// education : project text (add pictures in projects.html, data-media="education")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "education",

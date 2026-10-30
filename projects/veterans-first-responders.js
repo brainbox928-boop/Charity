@@ -1,4 +1,4 @@
-﻿// veterans-first-responders : project text (add pictures/video in projects.html, data-media="veterans-first-responders")
+// veterans-first-responders : project text (add pictures in projects.html, data-media="veterans-first-responders")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "veterans-first-responders",

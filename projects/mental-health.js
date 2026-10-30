@@ -1,4 +1,4 @@
-// mental-health : project text (add pictures/video in projects.html, data-media="mental-health")
+// mental-health : project text (add pictures in projects.html, data-media="mental-health")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "mental-health",

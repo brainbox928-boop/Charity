@@ -1,4 +1,4 @@
-// elderly-support : project text (add pictures/video in projects.html, data-media="elderly-support")
+// elderly-support : project text (add pictures in projects.html, data-media="elderly-support")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "elderly-support",

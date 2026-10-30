@@ -130,3 +130,6 @@
 }
 
 .projects-heading { max-width: none; }
+
+/* Story section is single-column now that the video slot is gone */
+.story-layout { grid-template-columns: minmax(0, 760px); justify-content: center; }

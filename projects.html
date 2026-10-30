@@ -13,9 +13,12 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"></noscript>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="site.css">
 </head>
@@ -29,117 +32,164 @@
     </div>
     <!-- PICTURE #13 PROJECT LIST THUMBNAILS: PHOTO 1 of each project's media block (bottom of this page) is used as the thumbnail; style with .project-listing-thumb in styles.css -->
     <div class="project-directory" id="project-directory" aria-live="polite"></div>
-    <!-- PICTURES #14-#17 PROJECT DETAIL PAGE: 4 photos + 1 video per project, set in the PROJECT MEDIA section at the bottom of this page -->
+    <!-- PICTURES #14-#17 PROJECT DETAIL PAGE: photos per project, set in the PROJECT MEDIA section at the bottom of this page -->
     <div class="project-detail" id="project-detail" aria-live="polite" hidden></div>
   </main>
   <!-- PROJECT MEDIA: fill in src paths only (e.g. Image/Food Security & Agricultural Development/photo-1.jpg). Empty src keeps the placeholder. -->
   <div id="project-media" hidden>
     <div data-media="food-security">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%201.jpg.jpeg" alt="Two farmers smiling in a vegetable garden" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%202.jpg.jpeg" alt="Farmers tending leafy green vegetables with a watering can" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%203.jpg.jpeg" alt="Woman holding a basket of vegetables beside a food security sign" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%204.jpg.jpeg" alt="Farmer harvesting green produce into a white bucket" loading="lazy" decoding="async">
-      <!-- PHOTO 5 --><img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%205.jpg.jpeg" alt="Woman carrying a crate of fresh produce on a farm" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/food-security.jpg" src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%201.jpg.jpeg" alt="Two farmers smiling in a vegetable garden" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%202.jpg.jpeg" alt="Farmers tending leafy green vegetables with a watering can" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%203.jpg.jpeg" alt="Woman holding a basket of vegetables beside a food security sign" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%204.jpg.jpeg" alt="Farmer harvesting green produce into a white bucket" loading="lazy" decoding="async">
+      <!-- PHOTO 5 -->
+      <img src="Image/Food%20Security%20&amp;%20Agricultural%20Development/Food%20Security%20&amp;%20Agricultural%20Development%205.jpg.jpeg" alt="Woman carrying a crate of fresh produce on a farm" loading="lazy" decoding="async">
     </div>
     <div data-media="healthcare">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%201.jpg.jpeg" alt="Hospital charity staff in uniform holding a sign" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%202.jpg.jpeg" alt="Medical team smiling during a procedure" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%203.jpg.jpeg" alt="Surgeons and nurses caring for a patient in a hospital ward" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%204.jpg.jpeg" alt="Hospital staff in scrubs standing together in a corridor" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/healthcare.jpg" src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%201.jpg.jpeg" alt="Hospital charity staff in uniform holding a sign" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%202.jpg.jpeg" alt="Medical team smiling during a procedure" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%203.jpg.jpeg" alt="Surgeons and nurses caring for a patient in a hospital ward" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Healthcare%20&amp;%20Medical%20Access/Healthcare%20&amp;%20Medical%20Access%204.jpg.jpeg" alt="Hospital staff in scrubs standing together in a corridor" loading="lazy" decoding="async">
     </div>
     <div data-media="shelter-housing">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%201.jpg.jpeg" alt="Builders constructing a timber and mud-brick house frame" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%202.jpg.jpeg" alt="Woman lashing wooden poles together while building a shelter" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%203.jpg.jpeg" alt="Aid team speaking with families under a relief tent" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%204.jpg.jpeg" alt="Children and women sitting outside tarpaulin shelters" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/shelter-housing.jpg" src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%201.jpg.jpeg" alt="Builders constructing a timber and mud-brick house frame" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%202.jpg.jpeg" alt="Woman lashing wooden poles together while building a shelter" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%203.jpg.jpeg" alt="Aid team speaking with families under a relief tent" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Emergency%20Shelter%20&amp;%20Affordable%20Housing/Emergency%20Shelter%20&amp;%20Affordable%20Housing%204.jpg.jpeg" alt="Children and women sitting outside tarpaulin shelters" loading="lazy" decoding="async">
     </div>
     <div data-media="education">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%201.jpg.jpeg" alt="Smiling pupils in school uniforms holding up colourful books" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%202.jpg.jpeg" alt="Pupils in blue uniforms waving from a classroom window" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%203.jpg.jpeg" alt="Children at wooden desks in a classroom with school supplies" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%204.jpg.jpg" alt="Children reading picture books together on a blue mat" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/education.jpg" src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%201.jpg.jpeg" alt="Smiling pupils in school uniforms holding up colourful books" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%202.jpg.jpeg" alt="Pupils in blue uniforms waving from a classroom window" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%203.jpg.jpeg" alt="Children at wooden desks in a classroom with school supplies" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Education%20&amp;%20Literacy%20Programs/Education%20&amp;%20Literacy%20Programs%204.jpg.jpg" alt="Children reading picture books together on a blue mat" loading="lazy" decoding="async">
     </div>
     <div data-media="clean-water">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%201.jpg.jpeg" alt="Child drinking from a tap with water splashing over cupped hands" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%202.jpg.jpeg" alt="Boy drinking a glass of water beside a clean water campaign message" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%203.jpg.jpeg" alt="Villagers gathered at a water point with colourful buckets" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%204.jpg.jpeg" alt="Women and children collecting water from a hand pump in a village" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/clean-water.jpg" src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%201.jpg.jpeg" alt="Child drinking from a tap with water splashing over cupped hands" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%202.jpg.jpeg" alt="Boy drinking a glass of water beside a clean water campaign message" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%203.jpg.jpeg" alt="Villagers gathered at a water point with colourful buckets" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Clean%20Water%20&amp;%20Sanitation%20Access/Clean%20Water%20&amp;%20Sanitation%20Access%204.jpg.jpeg" alt="Women and children collecting water from a hand pump in a village" loading="lazy" decoding="async">
     </div>
     <div data-media="animal-welfare">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%201.jpg.jpeg" alt="Rescued dogs looking out from a shelter kennel" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%202.jpg.jpeg" alt="Volunteer in a paw-print shirt greeting a dog, beside a count of pet meals delivered" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%203.jpg.jpeg" alt="Collage of a tabby cat, a dog with a kitten, a shelter cat being petted, and a team of volunteers in red shirts" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%204.jpg.jpeg" alt="Volunteers and pet owners with dogs at an outdoor adoption event" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/animal-welfare.jpg" src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%201.jpg.jpeg" alt="Rescued dogs looking out from a shelter kennel" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%202.jpg.jpeg" alt="Volunteer in a paw-print shirt greeting a dog, beside a count of pet meals delivered" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%203.jpg.jpeg" alt="Collage of a tabby cat, a dog with a kitten, a shelter cat being petted, and a team of volunteers in red shirts" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Animal%20Welfare%20&amp;%20Rescue/Animal%20Welfare%20&amp;%20Rescue%204.jpg.jpeg" alt="Volunteers and pet owners with dogs at an outdoor adoption event" loading="lazy" decoding="async">
     </div>
     <div data-media="environment">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%201.jpg.jpeg" alt="Volunteers cleaning up a village roadside with buckets and bags" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%202.jpg.jpeg" alt="Illustration of a person with a megaphone in front of a globe" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%203.jpg.jpeg" alt="Hands holding a small tree growing from a pile of coins" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%204.jpg.jpeg" alt="Hand placing a small tree on a stack of coins in soil" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/environment.jpg" src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%201.jpg.jpeg" alt="Volunteers cleaning up a village roadside with buckets and bags" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%202.jpg.jpeg" alt="Illustration of a person with a megaphone in front of a globe" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%203.jpg.jpeg" alt="Hands holding a small tree growing from a pile of coins" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Environmental%20Conservation%20&amp;%20Climate%20Tech/Environmental%20Conservation%20&amp;%20Climate%20Tech%204.jpg.jpeg" alt="Hand placing a small tree on a stack of coins in soil" loading="lazy" decoding="async">
     </div>
     <div data-media="disaster-relief">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%201.jpg.jpeg" alt="Aid workers unloading relief supplies from a truck" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%202.jpg.jpeg" alt="Red Cross volunteers distributing relief goods outdoors" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%203.jpg.jpeg" alt="Smiling child holding a GIVE sign at a donation drive" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%204.jpg.jpeg" alt="Children and an adult packing donated items into a disaster relief box" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/disaster-relief.jpg" src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%201.jpg.jpeg" alt="Aid workers unloading relief supplies from a truck" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%202.jpg.jpeg" alt="Red Cross volunteers distributing relief goods outdoors" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%203.jpg.jpeg" alt="Smiling child holding a GIVE sign at a donation drive" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Disaster%20Relief%20&amp;%20Emergency%20Response/Disaster%20Relief%20&amp;%20Emergency%20Response%204.jpg.jpeg" alt="Children and an adult packing donated items into a disaster relief box" loading="lazy" decoding="async">
     </div>
     <div data-media="arts-culture">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%201.jpg.jpeg" alt="Children in colourful costumes performing on stage beside framed artwork" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%202.jpg.jpeg" alt="Student holding a sign for a Cultural Heritage Club at a school" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%203.jpg.jpeg" alt="Schoolchildren in white and black uniforms lined up outdoors" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%204.jpg.jpeg" alt="Student in a yellow shirt reading a book in a busy classroom" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/arts-culture.jpg" src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%201.jpg.jpeg" alt="Children in colourful costumes performing on stage beside framed artwork" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%202.jpg.jpeg" alt="Student holding a sign for a Cultural Heritage Club at a school" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%203.jpg.jpeg" alt="Schoolchildren in white and black uniforms lined up outdoors" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Arts,%20Culture%20&amp;%20Heritage%20Preservation/Arts,%20Culture%20&amp;%20Heritage%20Preservation%204.jpg.jpeg" alt="Student in a yellow shirt reading a book in a busy classroom" loading="lazy" decoding="async">
     </div>
     <div data-media="elderly-support">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%201.jpg.jpeg" alt="Group of smiling older adults standing together outdoors" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%202.jpg.jpeg" alt="Older adults laughing together over a meal" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%203.jpg.jpeg" alt="Seniors attending a community meeting in a hall" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%204.jpg.jpeg" alt="Elderly woman in bright clothing resting her chin on her hand in a community hall" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/elderly-support.jpg" src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%201.jpg.jpeg" alt="Group of smiling older adults standing together outdoors" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%202.jpg.jpeg" alt="Older adults laughing together over a meal" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%203.jpg.jpeg" alt="Seniors attending a community meeting in a hall" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Elderly%20Support%20&amp;%20Senior%20Care/Elderly%20Support%20&amp;%20Senior%20Care%204.jpg.jpeg" alt="Elderly woman in bright clothing resting her chin on her hand in a community hall" loading="lazy" decoding="async">
     </div>
     <div data-media="veterans-first-responders">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%201.jpg.jpeg" alt="Smiling veteran in uniform beside a flag and the title Veteran Charities" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%202.jpg.jpeg" alt="Servicewoman in uniform beside a message about donations in support of veterans" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%203.jpg.jpeg" alt="Volunteers packing donated supplies into bags in an office" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%204.jgp.jpeg" alt="Volunteer packing bags beside boxes of supplies" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/veterans-first-responders.jpg" src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%201.jpg.jpeg" alt="Smiling veteran in uniform beside a flag and the title Veteran Charities" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%202.jpg.jpeg" alt="Servicewoman in uniform beside a message about donations in support of veterans" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%203.jpg.jpeg" alt="Volunteers packing donated supplies into bags in an office" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Veterans%20&amp;%20First%20Responder%20Assistance/Veterans%20&amp;%20First%20Responder%20Assistance%204.jgp.jpeg" alt="Volunteer packing bags beside boxes of supplies" loading="lazy" decoding="async">
     </div>
     <div data-media="legal-aid">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%201.jpg.jpeg" alt="Hands from different people holding up a set of justice scales" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%202.jpg.jpeg" alt="Graphic about human rights and social justice opportunities with a globe and scales" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%203.jpg.jpeg" alt="Crowd of peaceful protesters in face masks carrying signs" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%204.jpg.jpeg" alt="Large street march with protesters holding placards" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/legal-aid.jpg" src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%201.jpg.jpeg" alt="Hands from different people holding up a set of justice scales" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%202.jpg.jpeg" alt="Graphic about human rights and social justice opportunities with a globe and scales" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%203.jpg.jpeg" alt="Crowd of peaceful protesters in face masks carrying signs" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy/Legal%20Aid%20&amp;%20Social%20Justice%20Advocacy%204.jpg.jpeg" alt="Large street march with protesters holding placards" loading="lazy" decoding="async">
     </div>
     <div data-media="mental-health">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%201.jpg.jpeg" alt="Volunteers in yellow tops at an information stand for a wellbeing workshop" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%202.jpg.jpeg" alt="Volunteers in blue shirts at a mental health awareness stall under a canopy" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%203.jpg.jpeg" alt="Healthcare volunteers working together beside a Mental Health Charities heading" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%204.jpg.jpeg" alt="Illustration of a diverse group of people supporting one another" loading="lazy" decoding="async">
-      <!-- PHOTO 5 --><img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%205.jpg.jpeg" alt="Poster of four people with hands on hearts and the message Connect. Support. Prevent." loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/mental-health.jpg" src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%201.jpg.jpeg" alt="Volunteers in yellow tops at an information stand for a wellbeing workshop" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%202.jpg.jpeg" alt="Volunteers in blue shirts at a mental health awareness stall under a canopy" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%203.jpg.jpeg" alt="Healthcare volunteers working together beside a Mental Health Charities heading" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%204.jpg.jpeg" alt="Illustration of a diverse group of people supporting one another" loading="lazy" decoding="async">
+      <!-- PHOTO 5 -->
+      <img src="Image/Mental%20Health%20&amp;%20Suicide%20Prevention/Mental%20Health%20&amp;%20Suicide%20Prevention%205.jpg.jpeg" alt="Poster of four people with hands on hearts and the message Connect. Support. Prevent." loading="lazy" decoding="async">
     </div>
     <div data-media="economic-empowerment">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%201.jpg.jpeg" alt="Smiling shopkeeper behind the counter of a small shop with jars of goods" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%202.jpg.jpeg" alt="Woman trader selling grain from a market stall" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%203.jpg.jpeg" alt="Woman standing at a market stall of grain and spices" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%204.jpg.jpeg" alt="Woman selling vegetables at an outdoor market under an umbrella" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/economic-empowerment.jpg" src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%201.jpg.jpeg" alt="Smiling shopkeeper behind the counter of a small shop with jars of goods" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%202.jpg.jpeg" alt="Woman trader selling grain from a market stall" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%203.jpg.jpeg" alt="Woman standing at a market stall of grain and spices" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Economic%20Empowerment%20&amp;%20Micro-Loans/Economic%20Empowerment%20&amp;%20Micro-Loans%204.jpg.jpeg" alt="Woman selling vegetables at an outdoor market under an umbrella" loading="lazy" decoding="async">
     </div>
     <div data-media="youth-mentorship">
-      <!-- PHOTO 1 (also the list thumbnail) --><img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%201.jpg.jpeg" alt="Volunteers in yellow shirts raking mulch during a community clean-up" loading="lazy" decoding="async">
-      <!-- PHOTO 2 --><img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%202.jpg.jpeg" alt="Young people collecting litter along a riverside beach" loading="lazy" decoding="async">
-      <!-- PHOTO 3 --><img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%203.jpg.jpeg" alt="Mentor reading a book with two boys on a sofa" loading="lazy" decoding="async">
-      <!-- PHOTO 4 --><img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%204.jpg.jpeg" alt="Children doing a hands-on activity at a table in an after-school classroom" loading="lazy" decoding="async">
-      <!-- VIDEO: put the file in src; poster is the preview image (optional) --><video poster=""><source src=""></video>
+      <!-- PHOTO 1 (also the list thumbnail) -->
+      <img data-thumb="Image/thumbs/youth-mentorship.jpg" src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%201.jpg.jpeg" alt="Volunteers in yellow shirts raking mulch during a community clean-up" loading="lazy" decoding="async">
+      <!-- PHOTO 2 -->
+      <img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%202.jpg.jpeg" alt="Young people collecting litter along a riverside beach" loading="lazy" decoding="async">
+      <!-- PHOTO 3 -->
+      <img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%203.jpg.jpeg" alt="Mentor reading a book with two boys on a sofa" loading="lazy" decoding="async">
+      <!-- PHOTO 4 -->
+      <img src="Image/Youth%20Mentorship%20&amp;%20After-School%20Programs/Youth%20Mentorship%20&amp;%20After-School%20Programs%204.jpg.jpeg" alt="Children doing a hands-on activity at a table in an after-school classroom" loading="lazy" decoding="async">
     </div>
   </div>
   <script src="projects/food-security.js"></script>

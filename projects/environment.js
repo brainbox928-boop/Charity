@@ -1,4 +1,4 @@
-// environment : project text (add pictures/video in projects.html, data-media="environment")
+// environment : project text (add pictures in projects.html, data-media="environment")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "environment",

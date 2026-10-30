@@ -1,4 +1,4 @@
-// arts-culture : project text (add pictures/video in projects.html, data-media="arts-culture")
+// arts-culture : project text (add pictures in projects.html, data-media="arts-culture")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "arts-culture",

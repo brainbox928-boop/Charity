@@ -1,4 +1,4 @@
-// disaster-relief : project text (add pictures/video in projects.html, data-media="disaster-relief")
+// disaster-relief : project text (add pictures in projects.html, data-media="disaster-relief")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "disaster-relief",

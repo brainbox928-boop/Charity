@@ -1,4 +1,4 @@
-// economic-empowerment : project text (add pictures/video in projects.html, data-media="economic-empowerment")
+// economic-empowerment : project text (add pictures in projects.html, data-media="economic-empowerment")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "economic-empowerment",

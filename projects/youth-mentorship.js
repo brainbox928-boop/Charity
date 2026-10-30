@@ -1,4 +1,4 @@
-// youth-mentorship : project text (add pictures/video in projects.html, data-media="youth-mentorship")
+// youth-mentorship : project text (add pictures in projects.html, data-media="youth-mentorship")
 window.GH_PROJECTS = window.GH_PROJECTS || [];
 window.GH_PROJECTS.push({
   id: "youth-mentorship",

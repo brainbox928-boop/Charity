@@ -12,10 +12,8 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
 const getMedia = (id) => {
   const root = document.querySelector(`[data-media="${CSS.escape(id)}"]`);
   const images = [...(root?.querySelectorAll("img") || [])].slice(0, 5).map((img) => img.getAttribute("src") || "");
-  const videoEl = root?.querySelector("video");
-  const video = videoEl?.querySelector("source")?.getAttribute("src") || videoEl?.getAttribute("src") || "";
-  const videoPoster = videoEl?.getAttribute("poster") || "";
-  return { images, video, videoPoster };
+  const thumb = root?.querySelector("img[data-thumb]")?.dataset.thumb || images[0] || "";
+  return { images, thumb };
 };
 projects.forEach((project) => Object.assign(project, getMedia(project.id)));
 
@@ -23,7 +21,7 @@ const directory = document.querySelector("#project-directory");
 if (directory) {
   directory.innerHTML = projects.map((project) => `
     <article class="project-listing">
-      ${project.images?.[0] ? `<img class="project-listing-thumb img-fluid rounded-3" src="${escapeHtml(project.images[0])}" alt="${escapeHtml(project.title)}" loading="lazy" decoding="async">` : ""}
+      ${project.thumb ? `<img class="project-listing-thumb img-fluid rounded-3" src="${escapeHtml(project.thumb)}" alt="${escapeHtml(project.title)}" loading="lazy" decoding="async">` : ""}
       <span class="project-listing-icon"><i class="bi ${escapeHtml(project.icon)}" aria-hidden="true"></i></span>
       <div class="project-listing-copy">
         <h2>${escapeHtml(project.title)}</h2>
@@ -55,9 +53,6 @@ if (detail) {
     const imageSlots = imagePaths.map((imagePath, index) => imagePath
       ? `<img class="detail-project-image" src="${escapeHtml(imagePath)}" alt="${escapeHtml(project.title)} project photo ${index + 1}" loading="lazy" decoding="async">`
       : `<div class="detail-image-placeholder" role="img" aria-label="Project photo ${index + 1}"><i class="bi bi-image" aria-hidden="true"></i><span>Project photo ${index + 1}</span></div>`).join("");
-    const video = project.video
-      ? `<video class="detail-project-video" controls preload="metadata"${project.videoPoster ? ` poster="${escapeHtml(project.videoPoster)}"` : ""}><source src="${escapeHtml(project.video)}">Your browser does not support embedded video.</video>`
-      : '<div class="detail-video-placeholder"><i class="bi bi-camera-video" aria-hidden="true"></i><span>Project video</span></div>';
     const relatedProjects = [1, 2, 3].map((offset) => projects[(projectIndex + offset) % projects.length]);
 
     document.title = `${project.title} — GlobalHope`;
@@ -84,11 +79,6 @@ if (detail) {
       <section class="project-detail-section">
         <div class="project-section-heading"><span class="eyebrow">Stories from the work 📸</span><h2>Project photos</h2><p>Community updates and approved project stories will be shared here.</p></div>
         <div class="detail-image-grid">${imageSlots}</div>
-      </section>
-      <section class="project-detail-section project-video-section">
-        <div class="project-section-heading"><span class="eyebrow">From the community 🎥</span><h2>Project video</h2><p>Stories from community projects help show the work and the people behind it.</p></div>
-        ${video}
-        <p class="project-edit-note"><strong>Update this project’s media:</strong> In <code>projects.html</code>, find the <code>data-media="${escapeHtml(project.id)}"</code> block and set the <code>src</code> of its four <code>&lt;img&gt;</code> tags and the <code>&lt;video&gt;</code> source.</p>
       </section>
       <section class="related-projects">
         <div class="project-section-heading"><span class="eyebrow">Keep exploring</span><h2>Related initiatives</h2></div>
