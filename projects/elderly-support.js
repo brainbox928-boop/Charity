@@ -6,5 +6,7 @@ window.GH_PROJECTS.push({
   icon: "bi-person-hearts",
   summary: "Help older adults stay connected, supported, and able to participate in community life.",
   why: "Many older adults benefit from practical access support and regular human connection. Community programs can make it easier to receive meals, navigate spaces, and stay socially engaged.",
-  examples: ["Meal delivery mileage pools", "Accessibility ramp building", "Senior companion programs"]
+  examples: ["Meal delivery mileage pools", "Accessibility ramp building", "Senior companion programs"],
+  goal: 170000, // FUNDING GOAL in USD (0 = not announced yet)
+  raised: 15130 // AMOUNT RAISED so far in USD
 });

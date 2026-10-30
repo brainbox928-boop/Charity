@@ -28,6 +28,7 @@ if (directory) {
       <div class="project-listing-copy">
         <h2>${escapeHtml(project.title)}</h2>
         <p>${escapeHtml(project.summary)}</p>
+        ${window.ghProgress(project)}
       </div>
       <a class="project-listing-link" href="projects.html?id=${encodeURIComponent(project.id)}" aria-label="View project: ${escapeHtml(project.title)}"><i class="bi bi-eye-fill" aria-hidden="true"></i><span>View project</span></a>
     </article>`).join("");
@@ -75,6 +76,10 @@ if (detail) {
       <section class="project-detail-section">
         <div class="project-section-heading"><span class="eyebrow">What this initiative may support</span><h2>Areas of focus</h2></div>
         <ul class="project-focus-list">${project.examples.map((example) => `<li><i class="bi bi-check2-circle" aria-hidden="true"></i>${escapeHtml(example)}</li>`).join("")}</ul>
+      </section>
+      <section class="project-detail-section">
+        <div class="project-section-heading"><span class="eyebrow">Funding progress</span><h2>Where this project stands</h2></div>
+        ${window.ghProgress(project)}
       </section>
       <section class="project-detail-section">
         <div class="project-section-heading"><span class="eyebrow">Stories from the work 📸</span><h2>Project photos</h2><p>Community updates and approved project stories will be shared here.</p></div>

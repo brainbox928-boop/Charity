@@ -6,5 +6,7 @@ window.GH_PROJECTS.push({
   icon: "bi-heart-fill",
   summary: "Help local rescue and animal-care groups provide humane, practical support.",
   why: "Animal rescue organizations often need practical help to provide humane treatment and safe placements. Support can contribute to preventative care, rehabilitation, and adoption services.",
-  examples: ["Stray sterilization", "Wildlife rehabilitation", "Pet adoption medical funding"]
+  examples: ["Stray sterilization", "Wildlife rehabilitation", "Pet adoption medical funding"],
+  goal: 150000, // FUNDING GOAL in USD (0 = not announced yet)
+  raised: 7350 // AMOUNT RAISED so far in USD
 });

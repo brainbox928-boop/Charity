@@ -1,0 +1,132 @@
+/* Shared header, footer, content pages, progress bars and share buttons */
+.skip-link { position: absolute; left: 12px; top: -64px; z-index: 3000; padding: 10px 16px; border-radius: 8px; background: var(--hope-green-dark); color: #fff; font-weight: 700; text-decoration: none; transition: top .15s ease; }
+.skip-link:focus { top: 12px; color: #fff; }
+
+.gh-header, .gh-footer, .gh-page { font-family: "DM Sans", sans-serif; line-height: 1.55; }
+.gh-header { position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--hope-line); background: rgba(255, 255, 255, .94); backdrop-filter: blur(10px); box-shadow: 0 4px 18px rgba(35, 61, 47, .04); }
+.gh-header-inner { display: flex; width: min(1140px, 100%); min-height: 72px; align-items: center; gap: 24px; margin: 0 auto; padding: 0 24px; }
+.gh-logo { margin-right: auto; color: var(--hope-ink); font-family: "Fraunces", Georgia, serif; font-size: 1.4rem; font-weight: 700; text-decoration: none; }
+.gh-logo span { color: var(--hope-green); }
+.gh-nav { display: flex; gap: 26px; margin: 0; padding: 0; list-style: none; }
+.gh-nav a { padding: 8px 2px; border-bottom: 2px solid transparent; color: var(--hope-muted); font-size: .94rem; font-weight: 600; text-decoration: none; transition: color .18s ease, border-color .18s ease; }
+.gh-nav a:hover, .gh-nav a[aria-current="page"] { border-color: var(--hope-green); color: var(--hope-green-dark); }
+.gh-cta { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; background: var(--hope-green); color: #fff; font-size: .9rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(36, 119, 91, .25); transition: background-color .18s ease, transform .18s ease; }
+.gh-cta:hover { background: var(--hope-green-dark); color: #fff; transform: translateY(-2px); }
+.gh-nav-cta { display: none; }
+.gh-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent; color: var(--hope-ink); font-size: 1.6rem; }
+
+@media (max-width: 860px) {
+  .gh-toggle { display: inline-flex; }
+  .gh-header-inner { gap: 12px; padding: 0 16px; }
+  .gh-header > .gh-header-inner > .gh-cta { display: none; }
+  .gh-nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; gap: 0; padding: 6px 16px 16px; border-bottom: 1px solid var(--hope-line); background: #fff; box-shadow: 0 14px 24px rgba(35, 61, 47, .08); }
+  .gh-header.is-open .gh-nav { display: flex; }
+  .gh-nav a { display: block; padding: 14px 4px; border-bottom: 1px solid var(--hope-line); }
+  .gh-nav-cta { display: block; padding-top: 12px; }
+  .gh-nav-cta a { justify-content: center; border: 0; color: #fff; }
+}
+
+/* Footer */
+.gh-footer { margin-top: 0; padding: 56px 0 0; background: #1b2a24; color: #cfd9d3; }
+.gh-footer a { color: #e5ede8; text-decoration: none; }
+.gh-footer a:hover { color: #fff; text-decoration: underline; }
+.gh-footer-inner { width: min(1140px, 100%); margin: 0 auto; padding: 0 24px; }
+.gh-footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1.3fr; gap: 40px; padding-bottom: 40px; }
+.gh-footer h2 { margin: 0 0 14px; color: #fff; font-family: "DM Sans", sans-serif; font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.gh-footer-logo { color: #fff; font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; font-weight: 700; }
+.gh-footer-logo span { color: #6fd0a6; }
+.gh-footer p { margin: 10px 0 0; font-size: .88rem; }
+.gh-footer ul { margin: 0; padding: 0; list-style: none; }
+.gh-footer li { margin-bottom: 8px; font-size: .9rem; }
+.gh-newsletter { display: flex; gap: 8px; }
+.gh-newsletter input[type="email"] { min-width: 0; flex: 1; padding: 11px 13px; border: 1px solid #3c5148; border-radius: 8px; background: #24362e; color: #fff; }
+.gh-newsletter input::placeholder { color: #94a79d; }
+.gh-newsletter button { padding: 0 18px; border: 0; border-radius: 8px; background: #6fd0a6; color: #12261d; font-weight: 700; }
+.gh-newsletter button:hover { background: #8ae0bb; }
+.gh-form-note { color: #94a79d; font-size: .78rem !important; }
+.gh-form-status { min-height: 1.2em; font-weight: 600; }
+.gh-form-status.is-ok { color: #8ae0bb; }
+.gh-form-status.is-error { color: #ffb4a6; }
+.gh-follow { display: flex; gap: 10px; margin-top: 16px; }
+.gh-follow a { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: #2c4137; font-size: 1.05rem; }
+.gh-follow a:hover { background: #6fd0a6; color: #12261d; text-decoration: none; }
+.gh-footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; padding: 18px 0 24px; border-top: 1px solid #2f443a; color: #94a79d; font-size: .82rem; }
+
+@media (max-width: 860px) {
+  .gh-footer-grid { grid-template-columns: 1fr 1fr; }
+  .gh-footer-grid > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 576px) {
+  .gh-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .gh-footer-inner { padding: 0 16px; }
+  .gh-newsletter { flex-direction: column; }
+  .gh-newsletter button { min-height: 44px; }
+}
+
+/* Content pages */
+.gh-page { width: min(960px, 100%); margin: 0 auto; padding: 40px 24px 72px; color: var(--hope-ink); }
+.gh-page-hero { margin-bottom: 28px; padding: 28px 32px; border: 1px solid rgba(196, 218, 199, .8); border-radius: 16px; background: linear-gradient(120deg, rgba(235, 246, 235, .95), rgba(255, 250, 242, .96) 68%, rgba(249, 237, 228, .8)); }
+.gh-page-hero h1 { margin: 6px 0 10px; font-family: "Fraunces", Georgia, serif; font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 600; line-height: 1.15; }
+.gh-page-hero p { margin: 0; max-width: 680px; color: var(--hope-muted); }
+.gh-page h2 { margin: 36px 0 14px; font-family: "Fraunces", Georgia, serif; font-size: 1.5rem; font-weight: 600; }
+.gh-card { padding: 22px; border: 1px solid var(--hope-line); border-radius: 12px; background: #fff; box-shadow: 0 5px 16px rgba(35, 61, 47, .035); }
+.gh-contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }
+.gh-contact-list { margin: 0; padding: 0; list-style: none; }
+.gh-contact-list li { display: flex; gap: 12px; margin-bottom: 14px; font-size: .94rem; }
+.gh-contact-list i { color: var(--hope-green); font-size: 1.1rem; }
+.gh-page .btn-gh { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 0 22px; border: 0; border-radius: 8px; background: var(--hope-green); color: #fff; font-weight: 700; text-decoration: none; }
+.gh-page .btn-gh:hover { background: var(--hope-green-dark); color: #fff; }
+.gh-form-status.gh-on-light { color: var(--hope-muted); }
+.gh-form-status.gh-on-light.is-ok { color: var(--hope-green-dark); }
+.gh-form-status.gh-on-light.is-error { color: #b3392a; }
+
+.gh-page .accordion-button { font-weight: 700; color: var(--hope-ink); }
+.gh-page .accordion-button:not(.collapsed) { background: var(--hope-mint); color: var(--hope-green-dark); box-shadow: none; }
+.gh-page .accordion-item { border-color: var(--hope-line); }
+
+.gh-updates { display: grid; gap: 14px; }
+.gh-update time { color: var(--hope-muted); font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.gh-update h3 { margin: 4px 0 6px; font-size: 1.1rem; font-weight: 700; }
+.gh-update p { margin: 0; color: var(--hope-muted); }
+.gh-empty { padding: 22px; border: 1px dashed #c9d6cb; border-radius: 12px; color: var(--hope-muted); text-align: center; }
+.gh-updates:has(.gh-update) .gh-empty { display: none; }
+
+.gh-progress-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.gh-progress-card { display: grid; gap: 10px; padding: 16px 18px; border: 1px solid var(--hope-line); border-radius: 12px; background: #fff; color: inherit; text-decoration: none; transition: border-color .18s ease, box-shadow .18s ease; }
+.gh-progress-card:hover { border-color: #a8cdb2; box-shadow: 0 10px 22px rgba(35, 61, 47, .08); color: inherit; }
+.gh-progress-card h3 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: .98rem; font-weight: 700; }
+.gh-progress-card h3 i { color: var(--hope-green); }
+
+.gh-progress-block { margin-top: 10px; }
+.gh-progress-meta { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; color: var(--hope-muted); font-size: .78rem; }
+.gh-progress-meta strong { color: var(--hope-ink); }
+.gh-progress { height: 8px; overflow: hidden; border-radius: 99px; background: #e6ede7; }
+.gh-progress > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--hope-green), #4aa37f); }
+
+.gh-share { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+.gh-share > span { color: var(--hope-muted); font-size: .88rem; font-weight: 700; }
+.gh-share a, .gh-share button { display: inline-grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--hope-line); border-radius: 50%; background: #fff; color: var(--hope-green-dark); font-size: 1.05rem; text-decoration: none; transition: background-color .18s ease, color .18s ease; }
+.gh-share a:hover, .gh-share button:hover { background: var(--hope-green); color: #fff; }
+
+.gh-404 { display: grid; min-height: 60vh; place-items: center; padding: 48px 24px; text-align: center; font-family: "DM Sans", sans-serif; }
+.gh-404 h1 { margin: 0; color: var(--hope-green); font-family: "Fraunces", Georgia, serif; font-size: clamp(4rem, 15vw, 7rem); line-height: 1; }
+
+@media (max-width: 768px) {
+  .gh-contact-grid, .gh-progress-grid { grid-template-columns: 1fr; }
+  .gh-page { padding: 28px 16px 56px; }
+  .gh-page-hero { padding: 22px 19px; border-radius: 12px; }
+}
+
+/* Payment page additions */
+.tribute-fields { display: grid; gap: 10px; margin: 8px 0 4px 28px; }
+.crypto-network-note { margin: 10px 0; padding: 10px 12px; border-left: 4px solid var(--hope-gold); border-radius: 6px; background: #fbf2df; font-size: .86rem; }
+.crypto-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.receipt-card { margin: 18px 0; padding: 18px; border: 1px solid var(--hope-line); border-radius: 12px; background: #fff; text-align: left; }
+.receipt-card dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; font-size: .9rem; }
+.receipt-card dt { color: var(--hope-muted); font-weight: 600; }
+.receipt-card dd { margin: 0; overflow-wrap: anywhere; }
+@media print {
+  .gh-header, .gh-footer, .skip-link, .no-print { display: none !important; }
+}
+
+.projects-heading { max-width: none; }

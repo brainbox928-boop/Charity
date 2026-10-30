@@ -6,5 +6,7 @@ window.GH_PROJECTS.push({
   icon: "bi-people-fill",
   summary: "Help communities access practical legal support and public-interest advocacy.",
   why: "Documentation costs and limited access to advice can make it harder for people to understand and exercise their rights. Community legal partners can use support to improve access to assistance and public information.",
-  examples: ["Bail fund pools", "Pro-bono documentation processing fees", "Public awareness ad spend"]
+  examples: ["Bail fund pools", "Pro-bono documentation processing fees", "Public awareness ad spend"],
+  goal: 180000, // FUNDING GOAL in USD (0 = not announced yet)
+  raised: 4680 // AMOUNT RAISED so far in USD
 });

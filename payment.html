@@ -4,15 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support GlobalHope — Checkout</title>
+  <meta name="description" content="Contribute to a GlobalHope project by bank transfer, PayPal request, or cryptocurrency, with manual review.">
+  <meta property="og:title" content="Support GlobalHope — Checkout">
+  <meta property="og:description" content="Contribute to a GlobalHope project by bank transfer, PayPal request, or cryptocurrency, with manual review.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GlobalHope">
+  <meta name="theme-color" content="#24775b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="site.css" />
 </head>
 <body>
-  <main class="checkout-page">
+  <main class="checkout-page" id="main-content">
     <section class="checkout-shell">
 
       <!-- Brand header -->
@@ -103,12 +111,17 @@
         <div class="checkout-preferences">
           <label class="form-check"><input class="form-check-input" id="monthly-intent" type="checkbox"><span class="form-check-label">I am interested in making this a monthly contribution</span></label>
           <p>No recurring payment will be started. We will only reply with monthly-giving information if you request it; we do not send repeated fundraising asks.</p>
+          <label class="form-check"><input class="form-check-input" id="tribute-intent" type="checkbox"><span class="form-check-label">I am giving in honor or memory of someone</span></label>
+          <div class="tribute-fields" id="tribute-fields" hidden>
+            <select class="form-select" id="tribute-type" aria-label="Tribute type"><option>In honor of</option><option>In memory of</option></select>
+            <input class="form-control" id="tribute-name" type="text" maxlength="120" placeholder="Name of the person" aria-label="Name of the person">
+          </div>
           <label class="form-check"><input class="form-check-input" id="receipt-request" type="checkbox" checked><span class="form-check-label">Please send me a contribution acknowledgment after manual review</span></label>
           <p>This acknowledgment is not a tax receipt. GlobalHope does not promise that contributions are tax-deductible or provide tax benefits.</p>
           <label class="form-check"><input class="form-check-input" id="donor-public" type="checkbox"><span class="form-check-label">I consent to my first name and contribution amount being shared publicly after verification</span></label>
         </div>
 
-        <p class="checkout-legal">Continuing means you have read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Contribution Terms</a>.</p>
+        <p class="checkout-legal">Continuing means you have read our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms.html" target="_blank" rel="noopener">Contribution Terms</a>, including the <a href="terms.html#refunds" target="_blank" rel="noopener">refund policy</a>.</p>
 
         <p class="error" id="err-1" hidden></p>
 
@@ -172,6 +185,7 @@
         <input type="hidden" name="payment-method" id="submission-method" />
         <input type="hidden" name="crypto-currency" id="submission-crypto" />
         <input type="hidden" name="monthly-giving-interest" id="submission-monthly" />
+        <input type="hidden" name="tribute" id="submission-tribute" />
         <input type="hidden" name="contribution-acknowledgment-requested" id="submission-receipt" />
         <input type="hidden" name="public-listing-consent" id="submission-consent" />
         <h2>Upload payment evidence</h2>
@@ -201,7 +215,7 @@
       </div>
 
       <footer class="checkout-footer">
-        Manual checkout only. No card payment is processed on this page. <a href="privacy.html">Privacy</a> · <a href="terms.html">Contribution terms</a> · <a href="mailto:globalhopeonline@gmail.com">globalhopeonline@gmail.com</a> · <a href="tel:+16815056975">+1 681 505 6975</a><br>9450 Southwest Gemini Drive, Beaverton, OR 97008, USA
+        Manual checkout only. No card payment is processed on this page. <a href="privacy.html">Privacy</a> · <a href="terms.html">Contribution terms</a> · <a href="terms.html#refunds">Refunds</a> · <a href="faq.html">FAQ</a> · <a href="contact.html">Contact</a> · <a href="mailto:globalhopeonline@gmail.com">globalhopeonline@gmail.com</a> · <a href="tel:+16815056975">+1 681 505 6975</a><br>9450 Southwest Gemini Drive, Beaverton, OR 97008, USA
       </footer>
 
     </section>

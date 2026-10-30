@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates — GlobalHope</title>
+  <meta name="description" content="News and funding progress for GlobalHope community projects.">
+  <meta property="og:title" content="Updates — GlobalHope">
+  <meta property="og:description" content="News and funding progress for GlobalHope community projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GlobalHope">
+  <meta name="theme-color" content="#24775b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <main class="gh-page">
+    <div class="gh-page-hero">
+      <span class="eyebrow">Progress and stories</span>
+      <h1>Updates</h1>
+      <p>News from our community projects and where each initiative stands. Updates are posted only once they are confirmed.</p>
+    </div>
+
+    <h2>Latest news</h2>
+    <div class="gh-updates">
+      <!-- ADD A NEWS ITEM: paste a block like this above the .gh-empty line, newest first.
+      <article class="gh-card gh-update">
+        <time datetime="2026-11-01">1 November 2026</time>
+        <h3>Headline</h3>
+        <p>Short summary of the update.</p>
+      </article>
+      -->
+      <p class="gh-empty">No news yet. Subscribe in the footer to hear when the first update is posted.</p>
+    </div>
+
+    <h2>Project funding progress</h2>
+    <div class="gh-progress-grid" id="progress-list"></div>
+
+    <div data-share></div>
+  </main>
+
+  <script src="projects/food-security.js"></script>
+  <script src="projects/healthcare.js"></script>
+  <script src="projects/shelter-housing.js"></script>
+  <script src="projects/education.js"></script>
+  <script src="projects/clean-water.js"></script>
+  <script src="projects/animal-welfare.js"></script>
+  <script src="projects/environment.js"></script>
+  <script src="projects/disaster-relief.js"></script>
+  <script src="projects/arts-culture.js"></script>
+  <script src="projects/elderly-support.js"></script>
+  <script src="projects/veterans-first-responders.js"></script>
+  <script src="projects/legal-aid.js"></script>
+  <script src="projects/mental-health.js"></script>
+  <script src="projects/economic-empowerment.js"></script>
+  <script src="projects/youth-mentorship.js"></script>
+  <script src="progress.js"></script>
+  <script>
+    const list = document.querySelector("#progress-list");
+    const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[c]);
+    list.innerHTML = window.GH_PROJECTS.map((p) => `<a class="gh-progress-card" href="projects.html?id=${encodeURIComponent(p.id)}"><h3><i class="bi ${esc(p.icon)}" aria-hidden="true"></i>${esc(p.title)}</h3>${window.ghProgress(p)}</a>`).join("");
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="site.js" defer></script>
+</body>
+</html>

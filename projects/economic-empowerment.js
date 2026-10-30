@@ -6,5 +6,7 @@ window.GH_PROJECTS.push({
   icon: "bi-graph-up-arrow",
   summary: "Support community economic opportunity and locally led small-business growth.",
   why: "Small businesses and local makers can face barriers to capital, customers, and shared infrastructure. Community-designed financing and marketplaces may help more people build sustainable livelihoods.",
-  examples: ["Interest-free small business grants", "Local artisan marketplace infrastructure"]
+  examples: ["Interest-free small business grants", "Local artisan marketplace infrastructure"],
+  goal: 250000, // FUNDING GOAL in USD (0 = not announced yet)
+  raised: 17750 // AMOUNT RAISED so far in USD
 });

@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GlobalHope — Empowering Communities on a Global Scale</title>
+  <meta name="description" content="GlobalHope connects people with locally led community projects around the world. Explore 15 initiatives and choose where to help.">
+  <meta property="og:title" content="GlobalHope — Empowering Communities on a Global Scale">
+  <meta property="og:description" content="GlobalHope connects people with locally led community projects around the world. Explore 15 initiatives and choose where to help.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GlobalHope">
+  <meta name="theme-color" content="#24775b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -125,7 +132,7 @@
   /* ---------- Hero ---------- */
   /* PICTURE [CSS] #1 HERO BACKGROUND: replace the gradient with url('Image/hero.jpg') center/cover no-repeat, and add a dark overlay (linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(...)) so the white text stays readable */
   .hero {
-    padding: 160px 0 100px;
+    padding: 96px 0 100px;
     background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
     text-align: center;
   }
@@ -702,27 +709,11 @@
   }
 </style>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="container">
-    <!-- PICTURE [HTML] #0 LOGO (optional): replace the text with <img src="Image/logo.png" alt="GlobalHope logo" height="40"> -->
-    <a href="#top" class="logo">Global<span>Hope</span></a>
-    <ul class="nav-links" id="primary-navigation">
-      <li><a href="#about">About</a></li>
-      <li><a href="projects.html">Our causes</a></li>
-      <li><a href="#how-to-give">How to give</a></li>
-      <li><a href="#campaign-story">Our story</a></li>
-      <li><a href="#campaign-progress">Progress</a></li>
-      <li><a href="#impact">Impact</a></li>
-    </ul>
-    <a href="projects.html" class="nav-cta">Give to a project <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
-    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<!-- Static copy so Netlify detects the newsletter form (the live one is built in site.js) -->
+<form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="email"><input name="bot-field"></form>
 
 <!-- PICTURE [CSS] #1 HERO BANNER: set the background image in the .hero rule above. Optional [Bootstrap] alternative: add <img class="img-fluid rounded-4 mt-4" src="Image/hero.jpg" alt="..."> below the buttons -->
 <header class="hero" id="top">
@@ -893,31 +884,11 @@
       <a class="btn-primary" href="projects.html">Choose a project to support <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
     </div>
     <p class="payment-policies">By continuing, you can review our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Contribution Terms</a>. No card payment is processed on this website.</p>
+    <div data-share style="justify-content:center"></div>
   </div>
-</section>
-
-
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">Global<span>Hope</span></div>
-        <p class="footer-tagline">A community-support platform connecting people with locally led initiatives around the world.</p>
-        <p class="footer-contact">Contact: <a href="mailto:globalhopeonline@gmail.com">globalhopeonline@gmail.com</a> · <a href="tel:+16815056975">+1 681 505 6975</a><br>9450 Southwest Gemini Drive, Beaverton, OR 97008, USA</p>
-      </div>
-      <div class="disclaimer">
-        <strong>How support helps:</strong> GlobalHope is seeking external contributions to help develop and support its community initiatives. Project needs and funding plans will be shared as they are confirmed. Contributions are not processed automatically through this website.
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 GlobalHope Foundation. All rights reserved.
-      <span class="footer-policies"><a href="privacy.html">Privacy</a><a href="terms.html">Contribution terms</a></span>
-    </div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+</section><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 <script src="script.js" defer></script>
+<script src="site.js" defer></script>
 
 </body>
 </html>

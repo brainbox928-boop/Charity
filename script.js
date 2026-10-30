@@ -144,6 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   purposeInput.addEventListener("change", updateSummaries);
 
+  const tributeToggle = document.querySelector("#tribute-intent");
+  const tributeFields = document.querySelector("#tribute-fields");
+  const tributeName = document.querySelector("#tribute-name");
+  tributeToggle.addEventListener("change", () => {
+    tributeFields.hidden = !tributeToggle.checked;
+    tributeName.required = tributeToggle.checked;
+    if (tributeToggle.checked) tributeName.focus();
+  });
+  const getTribute = () => tributeToggle.checked && tributeName.value.trim()
+    ? `${document.querySelector("#tribute-type").value} ${tributeName.value.trim()}`
+    : "";
+
   checkout.addEventListener("submit", (event) => {
     event.preventDefault();
     errorOne.textContent = "";
@@ -204,18 +216,21 @@ document.addEventListener("DOMContentLoaded", () => {
     bitcoin: {
       name: "Bitcoin",
       ticker: "BTC",
+      network: "Bitcoin (BTC) network",
       image: "Image/Bitcoin%20QR%20code.jpg",
       address: "3DfMVLhNfUAQrhRSxy341KVsJnQpuDQx2o"
     },
     ethereum: {
       name: "Ethereum",
       ticker: "ETH",
+      network: "Ethereum (ETH) network",
       image: "Image/ETHERUM%20QR%20CODE.JPG",
       address: "0xe968AE33B8a46f45cec836eFe852Ce7267f47a31"
     },
     litecoin: {
       name: "Litecoin",
       ticker: "LTC",
+      network: "Litecoin (LTC) network",
       image: "Image/Litecoin%20QR%20code.jpg",
       address: "MMuJ4C35oTyEF67xrdEk9CmF9npzUPDMyY"
     }
@@ -248,7 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
         walletDetails.innerHTML = `
           <div class="crypto-choice">
             <strong>${crypto.name} (${crypto.ticker})</strong>
-            <img class="crypto-qr" src="${crypto.image}" alt="${crypto.name} wallet QR code">
+            <p class="crypto-network-note"><i class="bi bi-exclamation-triangle me-1" aria-hidden="true"></i>Network: <strong>${crypto.network}</strong>. Send only ${crypto.ticker} on this network. Coins sent on another network or of another type may be lost and cannot be recovered.</p>
+            <img class="crypto-qr" src="${crypto.image}" alt="${crypto.name} wallet QR code" width="220" height="220">
+            <div class="crypto-actions"><a class="btn checkout-btn checkout-btn-ghost" href="${crypto.image}" download><i class="bi bi-download me-2" aria-hidden="true"></i>Download QR code</a></div>
             <label class="form-label" for="crypto-wallet-address">Wallet address</label>
             <div class="checkout-address">
               <input class="form-control" id="crypto-wallet-address" value="${crypto.address}" readonly aria-label="${crypto.name} wallet address">
@@ -324,6 +341,37 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#submission-monthly").value = monthlyInterest ? "Interested; contact me about options" : "No";
     document.querySelector("#submission-receipt").value = receiptRequested ? "Yes, send an acknowledgment after manual review" : "No";
     document.querySelector("#submission-consent").value = donorConsent ? "Yes, first name and amount after verification" : "No, keep anonymous";
+    document.querySelector("#submission-tribute").value = getTribute() || "None";
+
+    try {
+      sessionStorage.setItem("ghReceipt", JSON.stringify({
+        date: new Date().toLocaleString(),
+        name: document.querySelector("#submission-name").value,
+        email: document.querySelector("#submission-email").value,
+        amount: `${currency} ${Number(amountInput.value).toFixed(2)}`,
+        project: document.querySelector("#submission-project").value,
+        method: document.querySelector("#submission-method").value,
+        reference: document.querySelector("#reference").value.trim(),
+        tribute: getTribute(),
+        monthly: monthlyInterest
+      }));
+    } catch { /* storage unavailable */ }
+
+    event.preventDefault();
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    fetch("/", { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        if (!response.ok) throw new Error("Submission failed");
+        window.location.href = "payment-success.html";
+      })
+      .catch(() => {
+        const subject = encodeURIComponent(`Payment evidence: ${document.querySelector("#submission-name").value}`);
+        const body = encodeURIComponent(`${getSummary()}\nMethod: ${document.querySelector("#submission-method").value}\nReference: ${document.querySelector("#reference").value.trim()}\n\n(Please attach your payment receipt to this email.)`);
+        error.innerHTML = `We could not submit the form from here. Please <a href="mailto:${supportEmail}?subject=${subject}&body=${body}">email your evidence to ${supportEmail}</a> and attach your receipt.`;
+        error.hidden = false;
+        submitButton.disabled = false;
+      });
   });
 
   updateSummaries();
