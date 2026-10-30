@@ -123,6 +123,7 @@
   }
 
   /* ---------- Hero ---------- */
+  /* PICTURE [CSS] #1 HERO BACKGROUND: replace the gradient with url('Image/hero.jpg') center/cover no-repeat, and add a dark overlay (linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(...)) so the white text stays readable */
   .hero {
     padding: 160px 0 100px;
     background: linear-gradient(180deg, var(--bg-soft) 0%, #ffffff 100%);
@@ -706,6 +707,7 @@
 
 <nav class="navbar">
   <div class="container">
+    <!-- PICTURE [HTML] #0 LOGO (optional): replace the text with <img src="Image/logo.png" alt="GlobalHope logo" height="40"> -->
     <a href="#top" class="logo">Global<span>Hope</span></a>
     <ul class="nav-links" id="primary-navigation">
       <li><a href="#about">About</a></li>
@@ -722,6 +724,7 @@
   </div>
 </nav>
 
+<!-- PICTURE [CSS] #1 HERO BANNER: set the background image in the .hero rule above. Optional [Bootstrap] alternative: add <img class="img-fluid rounded-4 mt-4" src="Image/hero.jpg" alt="..."> below the buttons -->
 <header class="hero" id="top">
   <div class="container">
     <div class="badge"><i class="bi bi-globe me-2" aria-hidden="true"></i>Community-led. Support-powered.</div>
@@ -739,6 +742,7 @@
       <h2>Good ideas need people behind them</h2>
       <p>Community projects need practical resources, trusted partnerships, and people willing to help. A contribution can help local teams work toward priorities such as learning, health, food access, and safe shelter. Needs and results vary by project and are shared as they are confirmed.</p>
     </div>
+    <!-- PICTURES [HTML+Bootstrap] #2-#4 ABOUT CARDS: above each card's <h3>, add <img class="img-fluid rounded-3 mb-3" src="Image/about-1.jpg" alt="..."> (use about-2.jpg, about-3.jpg for the others), or replace the emoji in .card-icon -->
     <div class="grid-3" id="framework">
       <div class="card">
         <div class="card-icon">🌍</div>
@@ -767,6 +771,7 @@
       <p>From food security and healthcare to arts, conservation, and youth mentorship, explore the needs behind each initiative and choose where you would like to help.</p>
       <a class="btn-primary" href="projects.html">Explore all 15 projects <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
     </div>
+    <!-- PICTURES [HTML+Bootstrap] #5-#7 FEATURED PROJECTS: add a thumbnail <img class="rounded-3" width="56" height="56" style="object-fit:cover" src="Image/featured-food.jpg" alt="..."> inside each link below, in place of the icon -->
     <div class="featured-project-links" aria-label="Featured projects">
       <a href="projects.html?id=food-security"><i class="bi bi-basket2-fill" aria-hidden="true"></i><span>Food security &amp; agriculture</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
       <a href="projects.html?id=healthcare"><i class="bi bi-heart-pulse-fill" aria-hidden="true"></i><span>Healthcare &amp; medical access</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
@@ -819,6 +824,7 @@
       <a class="cause-link" href="payment.html?amount=25">Support the work <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
     </div>
     <div class="story-media-wrap">
+      <!-- PICTURE [HTML+Bootstrap] #8 OUR STORY: replace the placeholder below with <img class="img-fluid rounded-4" src="Image/story.jpg" alt="..."> or a <video controls poster="Image/story.jpg"> -->
       <div class="story-video-placeholder"><i class="bi bi-camera-video" aria-hidden="true"></i><span>GlobalHope community campaign</span></div>
       <p class="media-caption"><i class="bi bi-info-circle me-1" aria-hidden="true"></i>Project stories and updates will be shared as community work develops.</p>
     </div>
@@ -850,6 +856,7 @@
       <h2>Choose a gift that fits your means</h2>
       <p>These examples show ways a contribution could support community work. They are suggestions, not guarantees; needs and costs vary by location and are confirmed with project partners.</p>
     </div>
+    <!-- PICTURES [HTML+Bootstrap] #9-#11 IMPACT CARDS: at the top of each <article class="impact-item"> add <img class="img-fluid rounded-3 mb-3" src="Image/impact-1.jpg" alt="..."> (impact-2.jpg, impact-3.jpg) -->
     <div class="row g-3">
       <div class="col-md-4"><article class="impact-item"><span class="impact-icon"><i class="bi bi-book-half" aria-hidden="true"></i></span><strong>$25 suggested gift</strong><p>Can contribute toward books, stationery, or other learning materials for a community program.</p><a class="impact-link" href="payment.html?project=education&amount=25">Give $25 <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article></div>
       <div class="col-md-4"><article class="impact-item"><span class="impact-icon impact-icon--coral"><i class="bi bi-heart-pulse-fill" aria-hidden="true"></i></span><strong>$50 suggested gift</strong><p>Can contribute toward basic clinic supplies or community health resources.</p><a class="impact-link" href="payment.html?project=healthcare&amount=50">Give $50 <i class="bi bi-arrow-right" aria-hidden="true"></i></a></article></div>
@@ -865,6 +872,7 @@
       <h2>Supporters who make this work possible</h2>
       <p>Supporter stories and contribution updates are shared only with permission and after verification.</p>
     </div>
+    <!-- PICTURE [HTML+Bootstrap] #12 SUPPORTERS: add supporter photos here, e.g. <img class="rounded-circle" width="64" height="64" src="Image/supporter-1.jpg" alt="..."> (only with consent) -->
     <div class="donor-roll" aria-live="polite">
       <i class="bi bi-chat-heart" aria-hidden="true"></i>
       <p>Verified supporter updates will appear here as contributions are reviewed and shared with consent.</p>
@@ -908,8 +916,8 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

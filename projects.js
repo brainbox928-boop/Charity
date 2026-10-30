@@ -1,125 +1,4 @@
-const projects = [
-  {
-    id: "food-security",
-    title: "Food Security & Agricultural Development",
-    icon: "bi-basket2-fill",
-    summary: "Support practical community efforts that improve access to nourishing food and strengthen local food systems.",
-    why: "Reliable access to nutritious food supports health, stability, and opportunity. This initiative can connect community kitchens, local food providers, and growers with practical tools and resources.",
-    examples: ["Community kitchen infrastructure", "Pantry distribution", "Micro-farm hydroponic tools"]
-  },
-  {
-    id: "healthcare",
-    title: "Healthcare & Medical Access",
-    icon: "bi-heart-pulse-fill",
-    summary: "Help community partners expand access to essential care, supplies, and health services.",
-    why: "Distance, cost, and limited equipment can make healthcare difficult to reach. Support can help local partners strengthen basic services and connect more people with appropriate care.",
-    examples: ["Rural clinic supplies", "Telehealth hardware", "Prescription micro-grant pools"]
-  },
-  {
-    id: "shelter-housing",
-    title: "Emergency Shelter & Affordable Housing",
-    icon: "bi-house-heart-fill",
-    summary: "Support safer temporary shelter and practical paths toward stable, affordable housing.",
-    why: "Safe shelter gives people a foundation for health, education, and work. This initiative focuses on practical building needs, protection from harsh weather, and help for young people transitioning to housing.",
-    examples: ["Structural building materials", "Winterization kits", "Transitional youth housing deposits"]
-  },
-  {
-    id: "education",
-    title: "Education & Literacy Programs",
-    icon: "bi-book-half",
-    summary: "Help learners access educational resources, literacy support, and opportunities to build future skills.",
-    why: "Access to books, technology, and welcoming learning environments can open pathways for children and adults. Support can help educators and community partners respond to the needs they identify locally.",
-    examples: ["Student tech bundles", "STEM classroom equipment", "Underrepresented developer micro-endowments"]
-  },
-  {
-    id: "clean-water",
-    title: "Clean Water & Sanitation Access",
-    icon: "bi-droplet-half",
-    summary: "Support community-led improvements to safe water, filtration, and public sanitation.",
-    why: "Reliable clean water and sanitation are essential for everyday health and dignity. This initiative aims to help local partners improve water access, filtration, and hygiene infrastructure.",
-    examples: ["Community well drilling", "Water filtration kits", "Public hygiene stations"]
-  },
-  {
-    id: "animal-welfare",
-    title: "Animal Welfare & Rescue",
-    icon: "bi-heart-fill",
-    summary: "Help local rescue and animal-care groups provide humane, practical support.",
-    why: "Animal rescue organizations often need practical help to provide humane treatment and safe placements. Support can contribute to preventative care, rehabilitation, and adoption services.",
-    examples: ["Stray sterilization", "Wildlife rehabilitation", "Pet adoption medical funding"]
-  },
-  {
-    id: "environment",
-    title: "Environmental Conservation & Climate Tech",
-    icon: "bi-tree-fill",
-    summary: "Back community projects that care for local ecosystems and explore practical climate solutions.",
-    why: "Healthy local environments support livelihoods and community wellbeing. This initiative can equip local groups to care for natural spaces and test appropriate, community-led climate solutions.",
-    examples: ["Community reforestation", "Beach cleanup equipment", "Urban solar installations"]
-  },
-  {
-    id: "disaster-relief",
-    title: "Disaster Relief & Emergency Response",
-    icon: "bi-life-preserver",
-    summary: "Help response teams and local partners prepare for urgent needs during emergencies.",
-    why: "When emergencies happen, timely transport, medical logistics, and trained response resources matter. Contributions can help local partners prepare and respond to needs they verify on the ground.",
-    examples: ["Search and rescue supplies", "Field hospital logistics", "Evacuation transport pools"]
-  },
-  {
-    id: "arts-culture",
-    title: "Arts, Culture & Heritage Preservation",
-    icon: "bi-palette-fill",
-    summary: "Support creative programs and community efforts to preserve and share local heritage.",
-    why: "Arts and heritage help communities tell their stories, preserve knowledge, and create shared spaces. This initiative supports locally chosen cultural projects and opportunities for young creators.",
-    examples: ["Community mural funding", "Local museum digitizing projects", "Youth theater equipment"]
-  },
-  {
-    id: "elderly-support",
-    title: "Elderly Support & Senior Care",
-    icon: "bi-person-hearts",
-    summary: "Help older adults stay connected, supported, and able to participate in community life.",
-    why: "Many older adults benefit from practical access support and regular human connection. Community programs can make it easier to receive meals, navigate spaces, and stay socially engaged.",
-    examples: ["Meal delivery mileage pools", "Accessibility ramp building", "Senior companion programs"]
-  },
-  {
-    id: "veterans-first-responders",
-    title: "Veterans & First Responder Assistance",
-    icon: "bi-shield-heart-fill",
-    summary: "Support wellbeing and transition resources for veterans and first responders.",
-    why: "People who have served their communities may need support with wellbeing, accessibility, and the transition to new work. This initiative can help partners offer tailored resources.",
-    examples: ["Service dog training", "Mental health retreat sponsorships", "Transition career training"]
-  },
-  {
-    id: "legal-aid",
-    title: "Legal Aid & Social Justice Advocacy",
-    icon: "bi-people-fill",
-    summary: "Help communities access practical legal support and public-interest advocacy.",
-    why: "Documentation costs and limited access to advice can make it harder for people to understand and exercise their rights. Community legal partners can use support to improve access to assistance and public information.",
-    examples: ["Bail fund pools", "Pro-bono documentation processing fees", "Public awareness ad spend"]
-  },
-  {
-    id: "mental-health",
-    title: "Mental Health & Suicide Prevention",
-    icon: "bi-chat-heart-fill",
-    summary: "Strengthen access to compassionate mental-health resources and community support.",
-    why: "Accessible, culturally responsive support can help people find care and connection earlier. This initiative supports community spaces and services led by qualified partners.",
-    examples: ["24/7 crisis hotline operations", "Free therapy session pools", "Wellness community spaces"]
-  },
-  {
-    id: "economic-empowerment",
-    title: "Economic Empowerment & Micro-Loans",
-    icon: "bi-graph-up-arrow",
-    summary: "Support community economic opportunity and locally led small-business growth.",
-    why: "Small businesses and local makers can face barriers to capital, customers, and shared infrastructure. Community-designed financing and marketplaces may help more people build sustainable livelihoods.",
-    examples: ["Interest-free small business grants", "Local artisan marketplace infrastructure"]
-  },
-  {
-    id: "youth-mentorship",
-    title: "Youth Mentorship & After-School Programs",
-    icon: "bi-stars",
-    summary: "Help young people find supportive mentors, enriching activities, and places to grow.",
-    why: "Safe, engaging after-school programs give young people opportunities to learn, build confidence, and connect with caring mentors. Local organizations can shape activities around what youth want and need.",
-    examples: ["Community sports equipment drives", "Leadership camp sponsorships"]
-  }
-];
+const projects = window.GH_PROJECTS; // each project lives in projects/<id>.js
 
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
   "&": "&amp;",
@@ -129,10 +8,22 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
   "'": "&#39;"
 })[character]);
 
+// Media is authored in projects.html inside <div data-media="project-id"> blocks.
+const getMedia = (id) => {
+  const root = document.querySelector(`[data-media="${CSS.escape(id)}"]`);
+  const images = [...(root?.querySelectorAll("img") || [])].slice(0, 5).map((img) => img.getAttribute("src") || "");
+  const videoEl = root?.querySelector("video");
+  const video = videoEl?.querySelector("source")?.getAttribute("src") || videoEl?.getAttribute("src") || "";
+  const videoPoster = videoEl?.getAttribute("poster") || "";
+  return { images, video, videoPoster };
+};
+projects.forEach((project) => Object.assign(project, getMedia(project.id)));
+
 const directory = document.querySelector("#project-directory");
 if (directory) {
   directory.innerHTML = projects.map((project) => `
     <article class="project-listing">
+      ${project.images?.[0] ? `<img class="project-listing-thumb img-fluid rounded-3" src="${escapeHtml(project.images[0])}" alt="${escapeHtml(project.title)}" loading="lazy" decoding="async">` : ""}
       <span class="project-listing-icon"><i class="bi ${escapeHtml(project.icon)}" aria-hidden="true"></i></span>
       <div class="project-listing-copy">
         <h2>${escapeHtml(project.title)}</h2>
@@ -159,9 +50,9 @@ if (detail) {
     detail.innerHTML = '<a class="back-link" href="projects.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> All projects</a><section class="project-not-found"><h1>Project not found</h1><p>Choose another initiative from the project directory.</p><a class="btn-primary" href="projects.html">Browse projects</a></section>';
   } else if (project) {
     const projectLink = `projects.html?id=${encodeURIComponent(project.id)}`;
-    const imagePaths = [0, 1, 2, 3].map((index) => project.images?.[index] || "");
+    const imagePaths = Array.from({ length: Math.max(4, project.images.length) }, (_, index) => project.images[index] || "");
     const imageSlots = imagePaths.map((imagePath, index) => imagePath
-      ? `<img class="detail-project-image" src="${escapeHtml(imagePath)}" alt="${escapeHtml(project.title)} project photo ${index + 1}" loading="lazy">`
+      ? `<img class="detail-project-image" src="${escapeHtml(imagePath)}" alt="${escapeHtml(project.title)} project photo ${index + 1}" loading="lazy" decoding="async">`
       : `<div class="detail-image-placeholder" role="img" aria-label="Project photo ${index + 1}"><i class="bi bi-image" aria-hidden="true"></i><span>Project photo ${index + 1}</span></div>`).join("");
     const video = project.video
       ? `<video class="detail-project-video" controls preload="metadata"${project.videoPoster ? ` poster="${escapeHtml(project.videoPoster)}"` : ""}><source src="${escapeHtml(project.video)}">Your browser does not support embedded video.</video>`
@@ -192,7 +83,7 @@ if (detail) {
       <section class="project-detail-section project-video-section">
         <div class="project-section-heading"><span class="eyebrow">From the community 🎥</span><h2>Project video</h2><p>Stories from community projects help show the work and the people behind it.</p></div>
         ${video}
-        <p class="project-edit-note"><strong>Update this project’s media:</strong> In <code>projects.js</code>, find the <code>${escapeHtml(project.id)}</code> entry and set <code>images</code> to up to four paths (for example, <code>["Image/photo-1.jpg", "Image/photo-2.jpg"]</code>) and <code>video</code> to a video path (for example, <code>"Image/project-video.mp4"</code>). Put the files in the <code>Image</code> folder or update the paths to match their location. An optional <code>videoPoster</code> path sets the video preview image.</p>
+        <p class="project-edit-note"><strong>Update this project’s media:</strong> In <code>projects.html</code>, find the <code>data-media="${escapeHtml(project.id)}"</code> block and set the <code>src</code> of its four <code>&lt;img&gt;</code> tags and the <code>&lt;video&gt;</code> source.</p>
       </section>
       <section class="related-projects">
         <div class="project-section-heading"><span class="eyebrow">Keep exploring</span><h2>Related initiatives</h2></div>
